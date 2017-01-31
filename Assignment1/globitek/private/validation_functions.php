@@ -24,4 +24,9 @@
     return filter_var($value, FILTER_VALIDATE_EMAIL);
   }
 
+  // start_with_alpha('yc123')
+  function start_with_alpha($value) {
+    return ctype_alpha(substr($value, 0, 1));
+  }
+
 ?>
