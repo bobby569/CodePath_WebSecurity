@@ -15,7 +15,6 @@
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     // Perform Validations
     // Hint: Write these in private/validation_functions.php
-    $errors = [];
     if (is_blank($firstname)) {
       $errors["err1"] = "First name cannot be blank.";
     } elseif (!has_length($firstname, ['min' => 2, 'max' => 20])) {
