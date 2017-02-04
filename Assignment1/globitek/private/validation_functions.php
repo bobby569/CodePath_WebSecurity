@@ -29,4 +29,16 @@
     return ctype_alpha(substr($value, 0, 1));
   }
 
+  function is_valid_name($value) {
+    return !preg_match('/[^-,.\']/', $value);
+  }
+
+  function is_valid_email($value) {
+    return !preg_match('/[^_@.]/', $value);
+  }
+
+  function is_valid_username($value) {
+    return !preg_match('/[^_]/', $value);
+  }
 ?>
+

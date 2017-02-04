@@ -13,7 +13,7 @@
   }
 
   function redirect_to($location) {
-    header("Location: " . $location);
+    header("Location: {$location}");
     exit;
   }
 

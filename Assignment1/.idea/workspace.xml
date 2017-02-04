@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e700168-906f-4a28-9f09-77b7cc2d914e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek/private/functions.php" afterPath="$PROJECT_DIR$/globitek/private/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek/private/validation_functions.php" afterPath="$PROJECT_DIR$/globitek/private/validation_functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek/public/css/style.css" afterPath="$PROJECT_DIR$/globitek/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek/public/register.php" afterPath="$PROJECT_DIR$/globitek/public/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek_users.sql" afterPath="$PROJECT_DIR$/globitek_users.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/globitek/public/registration_success.php" afterPath="$PROJECT_DIR$/globitek/public/registration_success.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,13 +34,22 @@
       <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/globitek/public/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+            <state relative-caret-position="405">
+              <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding>
-                <element signature="n#style#0;n#input#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1486181359000" expanded="true" signature="1935:2011" ph="INSERT INTO globitek.USERS... " />
-                <marker date="1486181359000" expanded="true" signature="2664:2722" ph="..." />
+                <marker date="1486184791000" expanded="true" signature="2486:2562" ph="INSERT INTO globitek.USERS... " />
+                <marker date="1486184791000" expanded="true" signature="3143:3201" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validation_functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/globitek/private/validation_functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,8 +57,8 @@
       <file leaf-file-name="globitek_users.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/globitek_users.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -61,11 +73,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/self_deinfed_database.sql" />
+        <option value="$PROJECT_DIR$/globitek/private/functions.php" />
         <option value="$PROJECT_DIR$/globitek/public/css/style.css" />
-        <option value="$PROJECT_DIR$/globitek/private/validation_functions.php" />
-        <option value="$PROJECT_DIR$/globitek_users.sql" />
-        <option value="$PROJECT_DIR$/globitek/public/register.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/globitek_users.sql" />
+        <option value="$PROJECT_DIR$/globitek/public/registration_success.php" />
+        <option value="$PROJECT_DIR$/globitek/private/validation_functions.php" />
+        <option value="$PROJECT_DIR$/globitek/public/register.php" />
       </list>
     </option>
   </component>
@@ -243,12 +257,12 @@
       <option name="presentableId" value="Default" />
       <updated>1485986760059</updated>
       <workItem from="1485986763483" duration="1672000" />
-      <workItem from="1486174176718" duration="5925000" />
+      <workItem from="1486174176718" duration="8031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7597000" />
+    <option name="totallyTimeSpent" value="9703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,26 +312,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#input#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1486181359000" expanded="true" signature="1935:2011" ph="INSERT INTO globitek.USERS... " />
-            <marker date="1486181359000" expanded="true" signature="2664:2722" ph="..." />
+            <marker date="1486184791000" expanded="true" signature="2486:2562" ph="INSERT INTO globitek.USERS... " />
+            <marker date="1486184791000" expanded="true" signature="3143:3201" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globitek/public/registration_success.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globitek/private/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -325,30 +322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globitek/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globitek/private/validation_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globitek/private/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -381,10 +354,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/globitek_users.sql">
+    <entry file="file://$PROJECT_DIR$/globitek/private/db_credentials.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="11" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globitek/private/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="11" lean-forward="false" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globitek/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -392,22 +381,53 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="-90">
-            <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <first_editor relative-caret-position="360">
+            <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/globitek/private/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globitek/public/registration_success.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globitek_users.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globitek/private/validation_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/globitek/public/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="48" column="20" lean-forward="true" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+        <state relative-caret-position="405">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
           <folding>
-            <element signature="n#style#0;n#input#4;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1486181359000" expanded="true" signature="1935:2011" ph="INSERT INTO globitek.USERS... " />
-            <marker date="1486181359000" expanded="true" signature="2664:2722" ph="..." />
+            <marker date="1486184791000" expanded="true" signature="2486:2562" ph="INSERT INTO globitek.USERS... " />
+            <marker date="1486184791000" expanded="true" signature="3143:3201" ph="..." />
           </folding>
         </state>
       </provider>
