@@ -1,10 +1,13 @@
 #main-content {
   margin-left: 10px;
+  min-height: 360px;
+  min-width: 300px;
 }
 
 #form {
   margin: 20px;
   font-family: cursive, Arial;
+  font-size: 1.1em;
 }
 
 .input_box {
@@ -13,8 +16,14 @@
 
 .error{
   color: #FF0000;
+  font-size: 1.05em;
 }
 
 body {
   width: 350px;
 }
+
+h1, p {
+  padding: 5px;
+}
+
