@@ -75,7 +75,7 @@
    </ul>
   </div>
 
-  <form action="register.php" method="post">
+  <form id="form" action="register.php" method="post" style="font-family: cursive">
     First name:<br>
     <input type="text" name="firstname"><br>
     Last name:<br>
@@ -85,7 +85,7 @@
     Username: <br>
     <input type="text" name="username"><br>
     Password: <br>
-    <input type="password" name="password"><br>
+    <input type="password" name="password"><br><br>
     <input type="submit" name="submit" value="Submit">
   </form>
 
