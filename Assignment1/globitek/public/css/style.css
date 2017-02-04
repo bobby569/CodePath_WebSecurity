@@ -4,5 +4,17 @@
 
 #form {
   margin: 20px;
-  font-family: cursive, arial;
+  font-family: cursive, Arial;
+}
+
+.input_box {
+  font-family: Arial;
+}
+
+.error{
+  color: #FF0000;
+}
+
+body {
+  width: 350px;
 }
