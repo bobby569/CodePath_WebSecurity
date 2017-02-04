@@ -30,15 +30,15 @@
   }
 
   function is_valid_name($value) {
-    return !preg_match('/[^-,.\']/', $value);
+    return !preg_match('/[^a-z-,. \']/i', $value);
   }
 
   function is_valid_email($value) {
-    return !preg_match('/[^_@.]/', $value);
+    return !preg_match('/[^a-z0-9_@.]/', $value);
   }
 
   function is_valid_username($value) {
-    return !preg_match('/[^_]/', $value);
+    return !preg_match('/[^a-z0-9_]/', $value);
   }
 ?>
 

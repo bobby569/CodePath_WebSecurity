@@ -49,10 +49,15 @@
     if (!empty($errors)) {
       $hidden = "";
     } else {
+//      $sql = "SELECT COUNT(*) FROM globitek.USERS WHERE USERNAME = '$username';";
+//      if (db_query($db, $sql) != 0) {
+//        echo "<script>alter('Username already exists.')</script>";
+//        exit;
+//      }
       // if there were no errors, submit data to database
       $date = date("Y-m-d H:i:s");
       $sql = "INSERT INTO globitek.USERS (FIRSTNAME, LASTNAME, EMAIL, USERNAME, CREATE_AT) ";
-      $sql .= "VALUES ('$firstname', '$lastname', '$email', '$username', '$date')";
+      $sql .= "VALUES ('$firstname', '$lastname', '$email', '$username', '$date');";
       $result = db_query($db, $sql);
       if ($result) {
         db_close($db);
