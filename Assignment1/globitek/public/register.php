@@ -28,14 +28,14 @@
     if (is_blank($email)) {
       $errors["err3"] = "Email cannot be blank.";
     } elseif (!has_valid_email_format($email)) {
-      $errors["err3"] = "The email format does not seem right."
+      $errors["err3"] = "The email format does not seem right.";
     }
     if (is_blank($username)) {
       $errors["err4"] = "First name cannot be blank.";
     } elseif (!has_length($username, ['min' => 2, 'max' => 20])) {
       $errors["err4"] = "First name must be between 2 and 20 characters.";
-    } elseif (start_with_alpha($username)) {
-      $errors["err4"] = "The username needs to start with alphabet."
+    } elseif (starts_with_alpha($username)) {
+      $errors["err4"] = "The username needs to start with alphabet.";
     }
     if (!empty($error)) {
       $hidden = "";
@@ -84,6 +84,7 @@
     <input type="text" name="email"><br>
     Username: <br>
     <input type="text" name="username"><br>
+    Password: <br>
     <input type="password" name="password"><br>
     <input type="submit" name="submit" value="Submit">
   </form>
