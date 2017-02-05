@@ -1,7 +1,7 @@
 #main-content {
   margin-left: 10px;
   min-height: 360px;
-  min-width: 300px;
+  min-width: 380px;
 }
 
 #form {
@@ -25,5 +25,9 @@ body {
 
 h1, p {
   padding: 3px;
+}
+
+#username_error {
+  color: #FF0000;
 }
 

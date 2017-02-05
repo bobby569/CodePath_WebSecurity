@@ -49,23 +49,24 @@
     if (!empty($errors)) {
       $hidden = "";
     } else {
-//      $sql = "SELECT COUNT(*) FROM globitek.USERS WHERE USERNAME = '$username';";
-//      if (db_query($db, $sql) != 0) {
-//        echo "<script>alter('Username already exists.')</script>";
-//        exit;
-//      }
-      // if there were no errors, submit data to database
-      $date = date("Y-m-d H:i:s");
-      $sql = "INSERT INTO globitek.USERS (FIRSTNAME, LASTNAME, EMAIL, USERNAME, CREATE_AT) ";
-      $sql .= "VALUES ('$firstname', '$lastname', '$email', '$username', '$date');";
-      $result = db_query($db, $sql);
-      if ($result) {
-        db_close($db);
-        redirect_to("registration_success.php");
+      $mysqli = db_connect();
+      if (intval($mysqli->query("SELECT COUNT(*) FROM globitek.USERS WHERE USERNAME = '$username';")) != 0) {
+        $exist = true;
+        $error_hidden = "";
       } else {
-        echo db_error($db);
-        db_close($db);
-        exit;
+        // if there were no errors, submit data to database
+        $date = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO globitek.USERS (FIRSTNAME, LASTNAME, EMAIL, USERNAME, CREATE_AT) ";
+        $sql .= "VALUES ('$firstname', '$lastname', '$email', '$username', '$date');";
+        $result = db_query($db, $sql);
+        if ($result) {
+          db_close($db);
+          redirect_to("registration_success.php");
+        } else {
+          echo db_error($db);
+          db_close($db);
+          exit;
+        }
       }
     }
   }
@@ -97,8 +98,14 @@
         Email: <br>
         <input class="input_box" type="text" name="email" value="<?php echo $email; ?>"><br>
         Username: <br>
-        <input class="input_box" type="text" name="username" value="<?php echo $username; ?>"><br><br>
-        <input type="submit" name="submit" value="Submit">
+        <input class="input_box" id="uninput" type="text" name="username" value="<?php echo $username; ?>">
+        <?php
+           if ($exist) {
+               echo "<span id='username_error'>Username already exists.</span>";
+           }
+         ?>
+        <br><br>
+        <input id="submit" type="submit" name="submit" value="Submit">
     </form>
 
 </div>
