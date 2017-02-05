@@ -40,7 +40,7 @@
     if (is_blank($username)) {
       array_push($errors, "Username cannot be blank");
     } elseif (!has_length($username, ['min' => 8, 'max' => 255])) {
-      array_push($errors, "First name must be between 2 and 255 characters");
+      array_push($errors, "Username must be between 8 and 255 characters");
     } elseif (!starts_with_alpha($username)) {
       array_push($errors, "The username needs to start with alphabet");
     } elseif (!is_valid_username($username)) {

@@ -6,12 +6,12 @@
 
 #form {
   margin: 20px;
-  font-family: cursive, Arial;
+  font-family: cursive, arial;
   font-size: 1.1em;
 }
 
 .input_box {
-  font-family: Arial, cursive;
+  font-family: arial, cursive;
   length: 40px;
 }
 
@@ -20,16 +20,12 @@
   font-size: 1.05em;
 }
 
-body {
-  width: 350px;
-}
-
 h1, p {
   padding: 3px;
 }
 
 #usr_err_msg {
-  font-family: Arail, cursive;
+  font-family: arial, cursive;
   color: #FF0000;
   margin: 2px;
 }
