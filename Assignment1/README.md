@@ -1,6 +1,6 @@
 # Project 1 - Globitek CMS
 
-Time spent: **8** hours spent in total
+Time spent: **11** hours spent in total
 
 ## User Stories
 

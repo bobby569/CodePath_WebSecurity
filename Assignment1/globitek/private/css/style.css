@@ -1,7 +1,7 @@
 #main-content {
   margin-left: 10px;
-  min-height: 360px;
-  min-width: 380px;
+  min-height: 400px;
+  min-width: 400px;
 }
 
 #form {
@@ -11,7 +11,8 @@
 }
 
 .input_box {
-  font-family: Arial;
+  font-family: Arial, cursive;
+  length: 40px;
 }
 
 .error{
@@ -27,7 +28,9 @@ h1, p {
   padding: 3px;
 }
 
-#username_error {
+#usr_err_msg {
+  font-family: Arail, cursive;
   color: #FF0000;
+  margin: 2px;
 }
 

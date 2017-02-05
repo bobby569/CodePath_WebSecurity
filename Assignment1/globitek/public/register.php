@@ -3,6 +3,7 @@
 
   // Set default values for all variables the page needs.
   $hidden = "hidden";
+  $show = "hidden";
   $errors = array();
   // if this is a POST request, process the form
   //if (isset($_POST['submit'])) {
@@ -50,9 +51,11 @@
       $hidden = "";
     } else {
       $mysqli = db_connect();
-      if (intval($mysqli->query("SELECT COUNT(*) FROM globitek.USERS WHERE USERNAME = '$username';")) != 0) {
-        $exist = true;
-        $error_hidden = "";
+      $result = $mysqli->query("SELECT COUNT(*) AS total FROM globitek.USERS WHERE USERNAME = '$username';");
+      $data = mysqli_fetch_assoc($result);
+      if (intval($data['total']) != 0) {
+        $show = "";
+        db_close($db);
       } else {
         // if there were no errors, submit data to database
         $date = date("Y-m-d H:i:s");
@@ -100,9 +103,7 @@
         Username: <br>
         <input class="input_box" id="uninput" type="text" name="username" value="<?php echo $username; ?>">
         <?php
-           if ($exist) {
-               echo "<span id='username_error'>Username already exists.</span>";
-           }
+          echo "<span id='usr_err_msg' $show>Username already exist.</span>";
          ?>
         <br><br>
         <input id="submit" type="submit" name="submit" value="Submit">

@@ -4,3 +4,7 @@ $("#submit").keypress(function (event) {
         $("#form").submit();
     }
 });
+
+$("#uninput").keydown(function () {
+    $("#usr_err_msg").hide();
+});
