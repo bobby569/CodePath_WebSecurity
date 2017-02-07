@@ -222,6 +222,21 @@
 
   function validate_salesperson($salesperson, $errors=array()) {
     // TODO add validations
+    validate_name($salesperson["first_name"], "first", $errors);
+    validate_name($salesperson["last_name"], "last", $errors);
+    validate_username($salesperson["username"], $errors);
+    validate_phone($salesperson["phone"], $errors);
+
+    if (is_blank($salesperson["email"])) {
+      array_push($errors, "Email cannot be blank");
+    } elseif (!has_length($salesperson["email"], ['max' => 255])) {
+        array_push($errors, "Email must be less than 255 characters");
+    } elseif (!has_valid_email_format($salesperson["email"])) {
+      array_push($errors, "The email format is invalid");
+    } elseif (!is_valid_email($salesperson["email"])) {
+      array_push($errors, "Email should only contain: letters, numbers, symbols(_ @ .)");
+    }
+
 
     return $errors;
   }
