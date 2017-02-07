@@ -66,7 +66,15 @@
   }
 
   function validate_email($value, $errors=array()) {
-    
+    if (is_blank($value)) {
+      array_push($errors, "Email cannot be blank");
+    } elseif (!has_length($value, ['max' => 255])) {
+      array_push($errors, "Email must be less than 255 characters");
+    } elseif (!has_valid_email_format($value)) {
+      array_push($errors, "The email format is invalid");
+    } elseif (!is_valid_email($value)) {
+      array_push($errors, "Email should only contain: letters, numbers, symbols(_ @ .)");
+    }
   }
 
   function validate_phone($value, $errors=array()) {
