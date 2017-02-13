@@ -32,7 +32,7 @@
   }
 
   function is_valid_email($value) {
-    return !preg_match('/[^a-z0-9_@.]/', $value);
+    return !preg_match('/[^a-z0-9@._-]/', $value);
   }
 
   function is_valid_username($value) {
@@ -47,14 +47,14 @@
     if (is_blank($value)) {
       array_push($errors, "($name) name cannot be empty.");
     } else if (!has_length($value, ['max' => 255])) {
-      array_push($errors, "($name) name must be less than 255 characters")
+      array_push($errors, "($name) name must be less than 255 characters");
     } elseif (!is_valid_name($value)) {
       array_push($errors, "($name) name should only contain: letters, spaces and symbols(- , . ')");
     }
   }
 
   function validate_username($value, $errors=array()) {
-    if (is_blank($value) {
+    if (is_blank($value)) {
       array_push($errors, "Username cannot be blank");
     } elseif (!has_length($value, ['max' => 255])) {
       array_push($errors, "Username must be between 8 and 255 characters");
