@@ -3,7 +3,7 @@ require_once('../../../private/initialize.php');
 
 // Set default values for all variables the page needs.
 $errors = array();
-$user = array(
+$salesperson = array(
   'first_name' => '',
   'last_name' => '',
   'phone' => '',
@@ -13,19 +13,19 @@ $user = array(
 if(is_post_request()) {
     // Confirm that values are present before accessing them.
     if(isset($_POST['first_name'])) {
-        $user['first_name'] = $_POST['first_name'];
+        $salesperson['first_name'] = $_POST['first_name'];
     }
     if(isset($_POST['last_name'])) {
-        $user['last_name'] = $_POST['last_name'];
+        $salesperson['last_name'] = $_POST['last_name'];
     }
     if(isset($_POST['phone'])) {
-        $user['phone'] = $_POST['phone'];
+        $salesperson['phone'] = $_POST['phone'];
     }
     if(isset($_POST['email'])) {
-        $user['email'] = $_POST['email'];
+        $salesperson['email'] = $_POST['email'];
     }
 
-    $result = insert_user($user);
+    $result = insert_salesperson($salesperson);
     if($result === true) {
         $new_id = db_insert_id($db);
         redirect_to('show.php?id=' . $new_id);
@@ -46,13 +46,13 @@ if(is_post_request()) {
 
     <form action="new.php" method="post">
         First name:<br />
-        <input type="text" name="first_name" value="<?php echo $user['first_name']; ?>" /><br />
+        <input type="text" name="first_name" value="<?php echo $salesperson['first_name']; ?>" /><br />
         Last name:<br />
-        <input type="text" name="last_name" value="<?php echo $user['last_name']; ?>" /><br />
+        <input type="text" name="last_name" value="<?php echo $salesperson['last_name']; ?>" /><br />
         Phone:<br />
-        <input type="text" name="phone" value="<?php echo $user['phone']; ?>" /><br />
+        <input type="text" name="phone" value="<?php echo $salesperson['phone']; ?>" /><br />
         Email:<br />
-        <input type="text" name="email" value="<?php echo $user['email']; ?>" /><br />
+        <input type="text" name="email" value="<?php echo $salesperson['email']; ?>" /><br />
         <br />
         <input type="submit" name="submit" value="Create"  />
     </form>
