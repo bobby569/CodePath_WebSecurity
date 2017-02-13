@@ -11,7 +11,6 @@ $user = array(
 );
 
 if(is_post_request()) {
-
   // Confirm that values are present before accessing them.
   if(isset($_POST['first_name'])) { $user['first_name'] = $_POST['first_name']; }
   if(isset($_POST['last_name'])) { $user['last_name'] = $_POST['last_name']; }
