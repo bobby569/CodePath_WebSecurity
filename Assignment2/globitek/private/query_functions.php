@@ -19,8 +19,7 @@
   // Find all states, ordered by name
   function find_all_states() {
     global $db;
-    $sql = "SELECT * FROM states ";
-    $sql .= "ORDER BY name ASC;";
+    $sql = "SELECT * FROM states ORDER BY name ASC;";
     $state_result = db_query($db, $sql);
     return $state_result;
   }
@@ -28,9 +27,7 @@
   // Find all states, ordered by name
   function find_states_for_country_id($country_id=0) {
     global $db;
-    $sql = "SELECT * FROM states ";
-    $sql .= "WHERE country_id='" . $country_id . "' ";
-    $sql .= "ORDER BY name ASC;";
+    $sql = "SELECT * FROM states WHERE country_id='" . $country_id . "' ORDER BY name ASC;";
     $state_result = db_query($db, $sql);
     return $state_result;
   }
@@ -38,8 +35,7 @@
   // Find state by ID
   function find_state_by_id($id=0) {
     global $db;
-    $sql = "SELECT * FROM states ";
-    $sql .= "WHERE id='" . $id . "';";
+    $sql = "SELECT * FROM states WHERE id='" . $id . "';";
     $state_result = db_query($db, $sql);
     return $state_result;
   }
@@ -191,8 +187,7 @@
   // Find all salespeople, ordered last_name, first_name
   function find_all_salespeople() {
     global $db;
-    $sql = "SELECT * FROM salespeople ";
-    $sql .= "ORDER BY last_name ASC, first_name ASC;";
+    $sql = "SELECT * FROM salespeople ORDER BY last_name ASC, first_name ASC;";
     $salespeople_result = db_query($db, $sql);
     return $salespeople_result;
   }
@@ -202,11 +197,10 @@
   // in the join table which have the same territory ID.
   function find_salespeople_for_territory_id($territory_id=0) {
     global $db;
-    $sql = "SELECT * FROM salespeople ";
-    $sql .= "LEFT JOIN salespeople_territories
-              ON (salespeople_territories.salesperson_id = salespeople.id) ";
-    $sql .= "WHERE salespeople_territories.territory_id='" . $territory_id . "' ";
-    $sql .= "ORDER BY last_name ASC, first_name ASC;";
+    $sql = "SELECT * FROM salespeople LEFT JOIN salespeople_territories
+              ON (salespeople_territories.salesperson_id = salespeople.id) 
+              WHERE salespeople_territories.territory_id='" . $territory_id . "' 
+              ORDER BY last_name ASC, first_name ASC;";
     $salespeople_result = db_query($db, $sql);
     return $salespeople_result;
   }
@@ -214,8 +208,7 @@
   // Find salesperson using id
   function find_salesperson_by_id($id=0) {
     global $db;
-    $sql = "SELECT * FROM salespeople ";
-    $sql .= "WHERE id='" . $id . "';";
+    $sql = "SELECT * FROM salespeople WHERE id='" . $id . "';";
     $salespeople_result = db_query($db, $sql);
     return $salespeople_result;
   }
@@ -223,10 +216,8 @@
   function validate_salesperson($salesperson, $errors=array()) {
     validate_name($salesperson["first_name"], "first", $errors);
     validate_name($salesperson["last_name"], "last", $errors);
-    // validate_username($salesperson["username"], $errors);
     validate_phone($salesperson["phone"], $errors);
     validate_email($salesperson["email"], $errors);
-
     return $errors;
   }
 
@@ -239,8 +230,12 @@
     if (!empty($errors)) {
       return $errors;
     }
-
-    $sql = ""; // TODO add SQL
+    $sql = "INSERT INTO salesperson (first_name, last_name, phone, email) VALUES (";
+    $sql .= "'" . $salesperson['first_name'] . "',";
+    $sql .= "'" . $salesperson['last_name'] . "',";
+    $sql .= "'" . $salesperson['phone'] . "',";
+    $sql .= "'" . $salesperson['email'] . "'";
+    $sql .= ");";
     // For INSERT statments, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
@@ -263,9 +258,13 @@
     if (!empty($errors)) {
       return $errors;
     }
-
-    $sql = ""; // TODO add SQL
-    // For update_salesperson statments, $result is just true/false
+    $sql = "UPDATE salesperson SET ";
+    $sql .= "first_name='" . $salesperson['first_name'] . "', ";
+    $sql .= "last_name='" . $salesperson['last_name'] . "', ";
+    $sql .= "email='" . $salesperson['phone'] . "', ";
+    $sql .= "username='" . $salesperson['email'] . "' ";
+    $sql .= "WHERE id='" . $salesperson['id'] . "' LIMIT 1;";
+    // For update_salesperson statements, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
       return true;
@@ -299,8 +298,7 @@
   // Find all users, ordered last_name, first_name
   function find_all_users() {
     global $db;
-    $sql = "SELECT * FROM users ";
-    $sql .= "ORDER BY last_name ASC, first_name ASC;";
+    $sql = "SELECT * FROM users ORDER BY last_name ASC, first_name ASC;";
     $users_result = db_query($db, $sql);
     return $users_result;
   }
@@ -314,29 +312,10 @@
   }
 
   function validate_user($user, $errors=array()) {
-    if (is_blank($user['first_name'])) {
-      $errors[] = "First name cannot be blank.";
-    } elseif (!has_length($user['first_name'], array('min' => 2, 'max' => 255))) {
-      $errors[] = "First name must be between 2 and 255 characters.";
-    }
-
-    if (is_blank($user['last_name'])) {
-      $errors[] = "Last name cannot be blank.";
-    } elseif (!has_length($user['last_name'], array('min' => 2, 'max' => 255))) {
-      $errors[] = "Last name must be between 2 and 255 characters.";
-    }
-
-    if (is_blank($user['email'])) {
-      $errors[] = "Email cannot be blank.";
-    } elseif (!has_valid_email_format($user['email'])) {
-      $errors[] = "Email must be a valid format.";
-    }
-
-    if (is_blank($user['username'])) {
-      $errors[] = "Username cannot be blank.";
-    } elseif (!has_length($user['username'], array('max' => 255))) {
-      $errors[] = "Username must be less than 255 characters.";
-    }
+    validate_name($user["first_name"], "first", $errors);
+    validate_name($user["last_name"], "last", $errors);
+    validate_phone($user["phone"], $errors);
+    validate_email($user["email"], $errors);
     return $errors;
   }
 
@@ -351,9 +330,7 @@
     }
 
     $created_at = date("Y-m-d H:i:s");
-    $sql = "INSERT INTO users ";
-    $sql .= "(first_name, last_name, email, username, created_at) ";
-    $sql .= "VALUES (";
+    $sql = "INSERT INTO users (first_name, last_name, email, username, created_at) VALUES (";
     $sql .= "'" . $user['first_name'] . "',";
     $sql .= "'" . $user['last_name'] . "',";
     $sql .= "'" . $user['email'] . "',";

@@ -45,9 +45,9 @@
 
   function validate_name($value, $name, $errors=array()) {
     if (is_blank($value)) {
-      array_push($errors, "($name) name cannot be empty.");
-    } else if (!has_length($value, ['max' => 255])) {
-      array_push($errors, "($name) name must be less than 255 characters");
+      array_push($errors, "($name) name cannot be empty");
+    } elseif (!has_length($value, array('min' => 2, 'max' => 255))) {
+      array_push($errors, "($name) name must be between 2 and 255 characters");
     } elseif (!is_valid_name($value)) {
       array_push($errors, "($name) name should only contain: letters, spaces and symbols(- , . ')");
     }
@@ -57,7 +57,7 @@
     if (is_blank($value)) {
       array_push($errors, "Username cannot be blank");
     } elseif (!has_length($value, ['max' => 255])) {
-      array_push($errors, "Username must be between 8 and 255 characters");
+      array_push($errors, "Username must be less than 255 characters");
     } elseif (!starts_with_alpha($value)) {
       array_push($errors, "The username needs to start with alphabet");
     } elseif (!is_valid_username($value)) {
@@ -68,8 +68,8 @@
   function validate_email($value, $errors=array()) {
     if (is_blank($value)) {
       array_push($errors, "Email cannot be blank");
-    } elseif (!has_length($value, ['max' => 255])) {
-      array_push($errors, "Email must be less than 255 characters");
+    } elseif (!has_length($value, array('min' => 2, 'max' => 255))) {
+      array_push($errors, "Email must be between 2 and 255 characters");
     } elseif (!has_valid_email_format($value)) {
       array_push($errors, "The email format is invalid");
     } elseif (!is_valid_email($value)) {
@@ -80,12 +80,22 @@
   function validate_phone($value, $errors=array()) {
     if (is_blank($value)) {
       array_push($errors, "Phone cannot be empty");
-    } else if (!has_length($value, ['min' => 7, 'max' => 15])) {
+    } elseif (!has_length($value, ['min' => 7, 'max' => 15])) {
       array_push($errors, "Phone number must be of length between 7 and 15");
-    } else if (!is_valid_phone($value)) {
+    } elseif (!is_valid_phone($value)) {
       array_push($error, "Phone number should only contain: numbers, symbols(- ( ))");
     }
   }
 
+  function validate_state($value, $error=array()) {
 
+  }
+
+  function validate_territory($value, $error=array()) {
+
+  }
+
+  function validate($value, $error=array()) {
+
+  }
 ?>
