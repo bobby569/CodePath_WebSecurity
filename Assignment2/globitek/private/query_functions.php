@@ -41,9 +41,9 @@
   }
 
   function validate_state($state, $errors=array()) {
-    validate_state_name($state["name"]);
-    validate_state_code($state["code"]);
-
+    validate_st_name($state["name"], $errors);
+    validate_state_code($state["code"], $errors);
+    validate_state_country_id($state["country_id"], $errors);
     return $errors;
   }
 
@@ -57,8 +57,12 @@
       return $errors;
     }
 
-    $sql = ""; // TODO add SQL
-    // For INSERT statments, $result is just true/false
+    $sql = "INSERT INTO states (name, code, country_id) VALUES (";
+    $sql .= "'" . $state['name'] . "',";
+    $sql .= "'" . $state['code'] . "',";
+    $sql .= "'" . $state['country_id'] . "'";
+    $sql .= ");";
+    // For INSERT statements, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
       return true;
@@ -81,7 +85,11 @@
       return $errors;
     }
 
-    $sql = ""; // TODO add SQL
+    $sql = "UPDATE states SET ";
+    $sql .= "name='" . $state['name'] . "', ";
+    $sql .= "code='" . $state['code'] . "', ";
+    $sql .= "country_id='" . $state['country_id'] . "' ";
+    $sql .= "WHERE id='" . $state['id'] . "' LIMIT 1;";
     // For update_state statments, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
@@ -128,8 +136,8 @@
   }
 
   function validate_territory($territory, $errors=array()) {
-    // TODO add validations
-
+    validate_st_name($territory["name"], $errors);
+    validate_territory_state_id($territory["state_id"], $errors);
     return $errors;
   }
 
@@ -215,8 +223,8 @@
   }
 
   function validate_salesperson($salesperson, $errors=array()) {
-    validate_name($salesperson["first_name"], "first", $errors);
-    validate_name($salesperson["last_name"], "last", $errors);
+    validate_name($salesperson["first_name"], $errors, "first");
+    validate_name($salesperson["last_name"], $errors, "last");
     validate_phone($salesperson["phone"], $errors);
     validate_email($salesperson["email"], $errors);
     return $errors;
@@ -313,8 +321,8 @@
   }
 
   function validate_user($user, $errors=array()) {
-    validate_name($user["first_name"], "first", $errors);
-    validate_name($user["last_name"], "last", $errors);
+    validate_name($user["first_name"], $errors, "first");
+    validate_name($user["last_name"], $errors, "last");
     validate_phone($user["phone"], $errors);
     validate_email($user["email"], $errors);
     return $errors;

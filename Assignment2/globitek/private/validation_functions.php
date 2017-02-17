@@ -43,7 +43,7 @@
     return !preg_match('/[^0-9()-]/', $value);
   }
 
-  function is_valid_state_name($value) {
+  function is_valid_st_name($value) {
     return !preg_match('/[^A-Za-z ]/', $value);
   }
 
@@ -51,7 +51,7 @@
     return !preg_match('/[^A-Za-z]/', $value);
   }
 
-  function validate_name($value, $name, $errors=array()) {
+  function validate_name($value, $errors=array(), $name="Name") {
     if (is_blank($value)) {
       array_push($errors, "($name) name cannot be empty");
     } elseif (!has_length($value, array('min' => 2, 'max' => 255))) {
@@ -64,7 +64,7 @@
   function validate_username($value, $errors=array()) {
     if (is_blank($value)) {
       array_push($errors, "Username cannot be blank");
-    } elseif (!has_length($value, ['max' => 255])) {
+    } elseif (!has_length($value, array('max' => 255))) {
       array_push($errors, "Username must be less than 255 characters");
     } elseif (!starts_with_alpha($value)) {
       array_push($errors, "The username needs to start with alphabet");
@@ -88,19 +88,19 @@
   function validate_phone($value, $errors=array()) {
     if (is_blank($value)) {
       array_push($errors, "Phone cannot be empty");
-    } elseif (!has_length($value, ['min' => 7, 'max' => 15])) {
+    } elseif (!has_length($value, array('min' => 7, 'max' => 15))) {
       array_push($errors, "Phone number must be of length between 7 and 15");
     } elseif (!is_valid_phone($value)) {
       array_push($error, "Phone number should only contain: numbers, symbols(- ( ))");
     }
   }
 
-  function validate_state_name($value, $error=array()) {
+  function validate_st_name($value, $error=array()) {
     if (is_blank($value)) {
       array_push($error, "State name cannot be blank");
     } elseif (!has_length($value, array('min' => 2, 'max' => 60))) {
       array_push($error, "State name must be between 2 and 60 characters");
-    } elseif (!is_valid_state_name($value)) {
+    } elseif (!is_valid_st_name($value)) {
       array_push($error, "State name format is invalid");
     }
   }
@@ -115,11 +115,23 @@
     }
   }
 
-  function validate_territory($value, $error=array()) {
-
+  function validate_state_country_id($value, $error=array()) {
+    if (strcmp($value, "0") == 0) {
+      array_push($error, "Please select a the country id");
+    }
   }
 
-  function validate($value, $error=array()) {
-
+  function validate_territory_state_id($value, $error=array()) {
+    if (is_blank($value)) {
+      array_push($error, "State id cannot be blank");
+    } elseif (!has_length($value, array('max' => 6))) {
+      array_push($error, "State id must be less than 6 digits");
+    } elseif (!ctype_digit($value)) {
+      array_push($error, "State id must be an integer");
+    }
   }
+
+  // function validate($value, $error=array()) {
+
+  // }
 ?>
