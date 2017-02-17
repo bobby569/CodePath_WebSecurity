@@ -41,7 +41,8 @@
   }
 
   function validate_state($state, $errors=array()) {
-    // TODO add validations
+    validate_state_name($state["name"]);
+    validate_state_code($state["code"]);
 
     return $errors;
   }

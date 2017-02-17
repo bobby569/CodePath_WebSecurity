@@ -43,6 +43,14 @@
     return !preg_match('/[^0-9()-]/', $value);
   }
 
+  function is_valid_state_name($value) {
+    return !preg_match('/[^A-Za-z ]/', $value);
+  }
+
+  function is_valid_state_code($value) {
+    return !preg_match('/[^A-Za-z]/', $value);
+  }
+
   function validate_name($value, $name, $errors=array()) {
     if (is_blank($value)) {
       array_push($errors, "($name) name cannot be empty");
@@ -87,8 +95,24 @@
     }
   }
 
-  function validate_state($value, $error=array()) {
+  function validate_state_name($value, $error=array()) {
+    if (is_blank($value)) {
+      array_push($error, "State name cannot be blank");
+    } elseif (!has_length($value, array('min' => 2, 'max' => 60))) {
+      array_push($error, "State name must be between 2 and 60 characters");
+    } elseif (!is_valid_state_name($value)) {
+      array_push($error, "State name format is invalid");
+    }
+  }
 
+  function validate_state_code($value, $error=array()) {
+    if (is_blank($value)) {
+      array_push($error, "State code cannot be blank");
+    } elseif (!has_length($value, array('min' => 2, 'max' => 2))) {
+      array_push($error, "State code must be exactly 2 characters");
+    } elseif (!is_valid_state_code($value)) {
+      array_push($error, "State code should only contain: alphabet");
+    }
   }
 
   function validate_territory($value, $error=array()) {

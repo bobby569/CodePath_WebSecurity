@@ -4,6 +4,8 @@
     <list default="true" id="33aa4dbe-b18e-4fc6-8a71-def3a877aeff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/globitek/private/query_functions.php" afterPath="$PROJECT_DIR$/Assignment2/globitek/private/query_functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php" afterPath="$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php" afterPath="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php" afterPath="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,21 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="validation_functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query_functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="query_functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/query_functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
               <folding>
                 <element signature="n#find_all_countries#0;n#!!top" expanded="false" />
                 <element signature="n#find_all_states#0;n#!!top" expanded="false" />
@@ -49,35 +41,65 @@
                 <element signature="n#validate_user#0;n#!!top" expanded="false" />
                 <element signature="n#insert_user#0;n#!!top" expanded="false" />
                 <element signature="n#update_user#0;n#!!top" expanded="false" />
-                <marker date="1487348483000" expanded="true" signature="142:183" ph="SELECT * FRO... countries" />
-                <marker date="1487348483000" expanded="true" signature="390:410" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="390:428" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="625:645" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="625:702" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="865:885" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="865:908" ph="SELECT * FRO... states" />
-                <marker date="1487348483000" expanded="true" signature="2339:2364" ph="SELECT * FRO... territories" />
-                <marker date="1487348483000" expanded="true" signature="2655:2680" ph="SELECT * FRO... territories" />
-                <marker date="1487348483000" expanded="true" signature="2948:2973" ph="SELECT * FRO... territories" />
-                <marker date="1487348483000" expanded="true" signature="4523:4548" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="4523:4587" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="4945:4970" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="4945:5079" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="4945:5161" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="4945:5215" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="5405:5430" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="5405:5453" ph="SELECT * FRO... salespeople" />
-                <marker date="1487348483000" expanded="true" signature="6130:6200" ph="INSERT INTO salesperson... " />
-                <marker date="1487348483000" expanded="true" signature="6975:6997" ph="UPDATE sales... " />
-                <marker date="1487348483000" expanded="true" signature="7875:7900" ph="SELECT * FRO... territories" />
-                <marker date="1487348483000" expanded="true" signature="8370:8389" ph="SELECT * FRO... users" />
-                <marker date="1487348483000" expanded="true" signature="8370:8428" ph="SELECT * FRO... users" />
-                <marker date="1487348483000" expanded="true" signature="8592:8642" ph="SELECT * FRO... users" />
-                <marker date="1487348483000" expanded="true" signature="9270:9287" ph="INSERT INTO users... " />
-                <marker date="1487348483000" expanded="true" signature="9270:9340" ph="INSERT INTO users... " />
-                <marker date="1487348483000" expanded="true" signature="9270:9349" ph="INSERT INTO users... " />
-                <marker date="1487348483000" expanded="true" signature="10104:10120" ph="UPDATE users... " />
+                <marker date="1487351240000" expanded="true" signature="142:183" ph="SELECT * FRO... countries" />
+                <marker date="1487351240000" expanded="true" signature="390:410" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="390:428" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="625:645" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="625:702" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="865:885" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="865:908" ph="SELECT * FRO... states" />
+                <marker date="1487351240000" expanded="true" signature="2393:2418" ph="SELECT * FRO... territories" />
+                <marker date="1487351240000" expanded="true" signature="2709:2734" ph="SELECT * FRO... territories" />
+                <marker date="1487351240000" expanded="true" signature="3002:3027" ph="SELECT * FRO... territories" />
+                <marker date="1487351240000" expanded="true" signature="4577:4602" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="4577:4641" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="4999:5024" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="4999:5133" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="4999:5215" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="4999:5269" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="5459:5484" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="5459:5507" ph="SELECT * FRO... salespeople" />
+                <marker date="1487351240000" expanded="true" signature="6184:6254" ph="INSERT INTO salesperson... " />
+                <marker date="1487351240000" expanded="true" signature="7029:7051" ph="UPDATE sales... " />
+                <marker date="1487351240000" expanded="true" signature="7929:7954" ph="SELECT * FRO... territories" />
+                <marker date="1487351240000" expanded="true" signature="8424:8443" ph="SELECT * FRO... users" />
+                <marker date="1487351240000" expanded="true" signature="8424:8482" ph="SELECT * FRO... users" />
+                <marker date="1487351240000" expanded="true" signature="8646:8696" ph="SELECT * FRO... users" />
+                <marker date="1487351240000" expanded="true" signature="9324:9341" ph="INSERT INTO users... " />
+                <marker date="1487351240000" expanded="true" signature="9324:9394" ph="INSERT INTO users... " />
+                <marker date="1487351240000" expanded="true" signature="9324:9403" ph="INSERT INTO users... " />
+                <marker date="1487351240000" expanded="true" signature="10158:10174" ph="UPDATE users... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validation_functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,15 +124,15 @@
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/salespeople/new.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/show.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/users/new.php" />
-        <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/users/edit.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/edit.php" />
         <option value="$PROJECT_DIR$/Assignment2/README.md" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/edit.php" />
-        <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/show.php" />
+        <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php" />
         <option value="$PROJECT_DIR$/Assignment2/globitek/private/query_functions.php" />
+        <option value="$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php" />
       </list>
     </option>
   </component>
@@ -233,36 +255,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staff" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="salespeople" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignment2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globitek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="private" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -351,12 +343,12 @@
       <workItem from="1486682814999" duration="19000" />
       <workItem from="1486682836533" duration="781000" />
       <workItem from="1487024660808" duration="5306000" />
-      <workItem from="1487342455427" duration="4140000" />
+      <workItem from="1487342455427" duration="5951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10246000" />
+    <option name="totallyTimeSpent" value="12057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -503,14 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/salespeople/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="573">
@@ -587,26 +571,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -627,26 +595,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1463673960000" expanded="true" signature="1644:1661" ph="INSERT INTO users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/salespeople/new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="258">
           <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php">
+    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/territories/new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="348">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/query_functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding>
             <element signature="n#find_all_countries#0;n#!!top" expanded="false" />
             <element signature="n#find_all_states#0;n#!!top" expanded="false" />
@@ -663,35 +649,51 @@
             <element signature="n#validate_user#0;n#!!top" expanded="false" />
             <element signature="n#insert_user#0;n#!!top" expanded="false" />
             <element signature="n#update_user#0;n#!!top" expanded="false" />
-            <marker date="1487348483000" expanded="true" signature="142:183" ph="SELECT * FRO... countries" />
-            <marker date="1487348483000" expanded="true" signature="390:410" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="390:428" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="625:645" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="625:702" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="865:885" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="865:908" ph="SELECT * FRO... states" />
-            <marker date="1487348483000" expanded="true" signature="2339:2364" ph="SELECT * FRO... territories" />
-            <marker date="1487348483000" expanded="true" signature="2655:2680" ph="SELECT * FRO... territories" />
-            <marker date="1487348483000" expanded="true" signature="2948:2973" ph="SELECT * FRO... territories" />
-            <marker date="1487348483000" expanded="true" signature="4523:4548" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="4523:4587" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="4945:4970" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="4945:5079" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="4945:5161" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="4945:5215" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="5405:5430" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="5405:5453" ph="SELECT * FRO... salespeople" />
-            <marker date="1487348483000" expanded="true" signature="6130:6200" ph="INSERT INTO salesperson... " />
-            <marker date="1487348483000" expanded="true" signature="6975:6997" ph="UPDATE sales... " />
-            <marker date="1487348483000" expanded="true" signature="7875:7900" ph="SELECT * FRO... territories" />
-            <marker date="1487348483000" expanded="true" signature="8370:8389" ph="SELECT * FRO... users" />
-            <marker date="1487348483000" expanded="true" signature="8370:8428" ph="SELECT * FRO... users" />
-            <marker date="1487348483000" expanded="true" signature="8592:8642" ph="SELECT * FRO... users" />
-            <marker date="1487348483000" expanded="true" signature="9270:9287" ph="INSERT INTO users... " />
-            <marker date="1487348483000" expanded="true" signature="9270:9340" ph="INSERT INTO users... " />
-            <marker date="1487348483000" expanded="true" signature="9270:9349" ph="INSERT INTO users... " />
-            <marker date="1487348483000" expanded="true" signature="10104:10120" ph="UPDATE users... " />
+            <marker date="1487351240000" expanded="true" signature="142:183" ph="SELECT * FRO... countries" />
+            <marker date="1487351240000" expanded="true" signature="390:410" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="390:428" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="625:645" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="625:702" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="865:885" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="865:908" ph="SELECT * FRO... states" />
+            <marker date="1487351240000" expanded="true" signature="2393:2418" ph="SELECT * FRO... territories" />
+            <marker date="1487351240000" expanded="true" signature="2709:2734" ph="SELECT * FRO... territories" />
+            <marker date="1487351240000" expanded="true" signature="3002:3027" ph="SELECT * FRO... territories" />
+            <marker date="1487351240000" expanded="true" signature="4577:4602" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="4577:4641" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="4999:5024" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="4999:5133" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="4999:5215" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="4999:5269" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="5459:5484" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="5459:5507" ph="SELECT * FRO... salespeople" />
+            <marker date="1487351240000" expanded="true" signature="6184:6254" ph="INSERT INTO salesperson... " />
+            <marker date="1487351240000" expanded="true" signature="7029:7051" ph="UPDATE sales... " />
+            <marker date="1487351240000" expanded="true" signature="7929:7954" ph="SELECT * FRO... territories" />
+            <marker date="1487351240000" expanded="true" signature="8424:8443" ph="SELECT * FRO... users" />
+            <marker date="1487351240000" expanded="true" signature="8424:8482" ph="SELECT * FRO... users" />
+            <marker date="1487351240000" expanded="true" signature="8646:8696" ph="SELECT * FRO... users" />
+            <marker date="1487351240000" expanded="true" signature="9324:9341" ph="INSERT INTO users... " />
+            <marker date="1487351240000" expanded="true" signature="9324:9394" ph="INSERT INTO users... " />
+            <marker date="1487351240000" expanded="true" signature="9324:9403" ph="INSERT INTO users... " />
+            <marker date="1487351240000" expanded="true" signature="10158:10174" ph="UPDATE users... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/private/validation_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assignment2/globitek/public/staff/states/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

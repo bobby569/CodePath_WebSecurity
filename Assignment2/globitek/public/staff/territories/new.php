@@ -4,7 +4,6 @@ require_once('../../../private/initialize.php');
 // Set default values for all variables the page needs.
 $errors = array();
 $territory = array(
-    //TODO: add validation
     'name' => '',
     'state_id' => '',
 );

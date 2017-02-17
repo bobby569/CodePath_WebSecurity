@@ -45,6 +45,7 @@ if(is_post_request()) {
         Code:<br />
         <input type="text" name="code" value="<?php echo $state['code']; ?>" /><br />
         Country id:<br />
+        <!--TODO: change to drop down selection bar-->
         <input type="text" name="country_id" value="<?php echo $state['country_id']; ?>" /><br />
         <br />
         <input type="submit" name="submit" value="Create"  />
