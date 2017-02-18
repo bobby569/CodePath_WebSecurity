@@ -40,7 +40,7 @@ $state = db_fetch_assoc($state_result);
 
     <h2>Territories</h2>
     <br />
-    <a href="../territories/new.php">Add a Territory</a><br />
+    <a href="../territories/new.php?id=<?php echo $state['id']; ?>">Add a Territory</a><br />
 
 <?php
     $territory_result = find_territories_for_state_id($state['id']);

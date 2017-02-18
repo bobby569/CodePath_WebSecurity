@@ -137,16 +137,8 @@
 
   function validate_territory($territory, $errors=array()) {
     $errors = validate_st_name($territory["name"], $errors);
-    $errors = validate_territory_state_id($territory["state_id"], $errors);
+    $errors = validate_territory_position($territory["position"], $errors);
     return $errors;
-  }
-
-  function retrieve_territory_position($state_id) {
-    $mysqli = db_connect();
-    $result = $mysqli->query("SELECT MAX(position) AS maximum FROM assignment2.territories WHERE state_id = '$state_id';");
-    $data = mysqli_fetch_assoc($result);
-    $position = intval($data['maximum']) + 1;
-    return $position;
   }
 
   // Add a new territory to the table
@@ -158,13 +150,13 @@
     if (!empty($errors)) {
       return $errors;
     }
-    $position = retrieve_territory_position($territory["state_id"]);
+
     $sql = "INSERT INTO territories (name, state_id, position) VALUES (";
     $sql .= "'" . $territory['name'] . "',";
     $sql .= "'" . $territory['state_id'] . "',";
-    $sql .= "'" . $position . "'";
+    $sql .= "'" . $territory['position'] . "'";
     $sql .= ");";
-    // For INSERT statments, $result is just true/false
+    // For INSERT statements, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
       return true;
@@ -189,9 +181,9 @@
 
     $sql = "UPDATE territories SET ";
     $sql .= "name='" . $territory['name'] . "', ";
-    $sql .= "state_id='" . $territory['state_id'] . "' ";
+    $sql .= "position='" . $territory['position'] . "' ";
     $sql .= "WHERE id='" . $territory['id'] . "' LIMIT 1;";
-    // For update_territory statments, $result is just true/false
+    // For update_territory statements, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
       return true;

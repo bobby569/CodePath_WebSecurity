@@ -16,13 +16,13 @@ if(is_post_request()) {
     if(isset($_POST['name'])) {
         $territory['name'] = $_POST['name'];
     }
-    if(isset($_POST['state_id'])) {
-        $territory['state_id'] = $_POST['state_id'];
+    if(isset($_POST['position'])) {
+        $territory['position'] = $_POST['position'];
     }
 
     $result = update_territory($territory);
     if($result === true) {
-        redirect_to('show.php?id=' . $territory['id']);
+        redirect_to('../states/show.php?id=' . $territory['state_id']);
     } else {
         $errors = $result;
     }
@@ -32,7 +32,7 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="../states/index.php">Back to State Details</a><br />
+  <a href="../states/show.php?id=<?php echo $territory['state_id']; ?>">Back to State Details</a><br />
 
   <h1>Edit Territory: <?php echo $territory['name']; ?></h1>
 
@@ -41,8 +41,8 @@ if(is_post_request()) {
     <form action="edit.php?id=<?php echo $territory['id']; ?>" method="post">
         Name:<br />
         <input type="text" name="name" value="<?php echo $territory['name']; ?>" /><br />
-        State ID:<br />
-        <input type="text" name="state_id" value="<?php echo $territory['state_id']; ?>" /><br />
+        Position:<br />
+        <input type="text" name="position" value="<?php echo $territory['position']; ?>" /><br />
         <br />
         <input type="submit" name="submit" value="Update"  />
     </form>

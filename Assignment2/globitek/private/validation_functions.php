@@ -128,13 +128,13 @@
     return $errors;
   }
 
-  function validate_territory_state_id($value, $errors=array()) {
+  function validate_territory_position($value, $errors=array()) {
     if (is_blank($value)) {
-      array_push($errors, "State id cannot be blank");
-    } elseif (!has_length($value, array('max' => 6))) {
-      array_push($errors, "State id must be less than 6 digits");
+      array_push($errors, "Position cannot be blank");
     } elseif (!ctype_digit($value)) {
-      array_push($errors, "State id must be an integer");
+        array_push($errors, "Position must be an integer");
+    } elseif (!has_length($value, array('max' => 6))) {
+      array_push($errors, "Position must be less than 3 digits");
     }
     return $errors;
   }

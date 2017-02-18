@@ -35,13 +35,13 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="index.php">Back to States List</a><br />
+  <a href="show.php?id=<?php echo $state['id'] ?>">Back to States List</a><br />
 
   <h1>Edit State: <?php echo $state['name']; ?></h1>
 
     <?php echo display_errors($errors); ?>
 
-    <form action="edit.php?id=<?php echo $state['country_id']; ?>" method="post">
+    <form action="edit.php?id=<?php echo $state['id']; ?>" method="post">
         Name:<br />
         <input type="text" name="name" value="<?php echo $state['name']; ?>" /><br />
         Code:<br />

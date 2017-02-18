@@ -1,11 +1,14 @@
 <?php
 require_once('../../../private/initialize.php');
 
+$state_result = find_state_by_id($_GET['id']);
+$state = db_fetch_assoc($state_result);
 // Set default values for all variables the page needs.
 $errors = array();
 $territory = array(
     'name' => '',
-    'state_id' => '',
+    'state_id' => $state['id'],
+    'position' => '',
 );
 
 if(is_post_request()) {
@@ -13,8 +16,8 @@ if(is_post_request()) {
     if(isset($_POST['name'])) {
         $territory['name'] = $_POST['name'];
     }
-    if(isset($_POST['state_id'])) {
-        $territory['state_id'] = $_POST['state_id'];
+    if(isset($_POST['position'])) {
+        $territory['position'] = $_POST['position'];
     }
 
     $result = insert_territory($territory);
@@ -30,17 +33,17 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="../states">Back to State Details</a><br />
+  <a href="../states/show.php?id=<?php echo $state['id'] ?>">Back to State Details</a><br />
 
   <h1>New Territory</h1>
 
     <?php echo display_errors($errors); ?>
 
-    <form action="new.php" method="post">
+    <form action="new.php?id=<?php echo $state['id']; ?>" method="post">
         Name:<br />
         <input type="text" name="name" value="<?php echo $territory['name']; ?>" /><br />
-        State ID:<br />
-        <input type="text" name="state_id" value="<?php echo $territory['state_id']; ?>" /><br />
+        Position:<br />
+        <input type="text" name="position" value="<?php echo $territory['position']; ?>" /><br />
         <br />
         <input type="submit" name="submit" value="Create"  />
     </form>
