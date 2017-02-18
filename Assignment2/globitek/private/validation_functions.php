@@ -23,10 +23,12 @@
     return filter_var($value, FILTER_VALIDATE_EMAIL);
   }
 
+  // My custom validation
   function starts_with_alpha($value) {
     return ctype_alpha(substr($value, 0, 1));
   }
 
+  // My custom validation
   function is_valid_name($value) {
     return !preg_match('/[^A-Za-z-,. \']/', $value);
   }
@@ -43,10 +45,12 @@
     return !preg_match('/[^0-9()-]/', $value);
   }
 
+  // My custom validation
   function is_valid_st_name($value) {
     return !preg_match('/[^A-Za-z ]/', $value);
   }
 
+  // My custom validation
   function is_valid_state_code($value) {
     return !preg_match('/[^A-Za-z]/', $value);
   }
@@ -71,6 +75,17 @@
       array_push($errors, "The username needs to start with alphabet");
     } elseif (!is_valid_username($value)) {
       array_push($errors, "Username should only contain: letters, numbers, symbols(_)");
+    }
+    return $errors;
+  }
+
+  // My custom validation
+  function validate_unique_username($value, $errors=array()) {
+    $mysqli = db_connect();
+    $result = $mysqli->query("SELECT COUNT(*) AS total FROM assignment2.USERS WHERE USERNAME = '$value';");
+    $data = mysqli_fetch_assoc($result);
+    if (intval($data['total']) != 0) {
+        array_push($errors, "The username has already been used");
     }
     return $errors;
   }
@@ -121,6 +136,7 @@
     return $errors;
   }
 
+  // My custom validation
   function validate_state_country_id($value, $errors=array()) {
     if (strcmp($value, "0") == 0) {
       array_push($errors, "Please select a the country id");

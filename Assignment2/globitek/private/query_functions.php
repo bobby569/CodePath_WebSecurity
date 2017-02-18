@@ -332,6 +332,7 @@
     $errors = validate_name($user["last_name"], $errors, "Last");
     $errors = validate_username($user["username"], $errors);
     $errors = validate_email($user["email"], $errors);
+    $errors = validate_unique_username($user["username"], $errors);
     return $errors;
   }
 
