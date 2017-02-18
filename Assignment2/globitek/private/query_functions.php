@@ -41,9 +41,9 @@
   }
 
   function validate_state($state, $errors=array()) {
-    validate_st_name($state["name"], $errors);
-    validate_state_code($state["code"], $errors);
-    validate_state_country_id($state["country_id"], $errors);
+    $errors = validate_st_name($state["name"], $errors);
+    $errors = validate_state_code($state["code"], $errors);
+    $errors = validate_state_country_id($state["country_id"], $errors);
     return $errors;
   }
 
@@ -136,9 +136,17 @@
   }
 
   function validate_territory($territory, $errors=array()) {
-    validate_st_name($territory["name"], $errors);
-    validate_territory_state_id($territory["state_id"], $errors);
+    $errors = validate_st_name($territory["name"], $errors);
+    $errors = validate_territory_state_id($territory["state_id"], $errors);
     return $errors;
+  }
+
+  function retrieve_territory_position($state_id) {
+    $mysqli = db_connect();
+    $result = $mysqli->query("SELECT MAX(position) AS maximum FROM assignment2.territories WHERE state_id = '$state_id';");
+    $data = mysqli_fetch_assoc($result);
+    $position = intval($data['maximum']) + 1;
+    return $position;
   }
 
   // Add a new territory to the table
@@ -150,8 +158,12 @@
     if (!empty($errors)) {
       return $errors;
     }
-
-    $sql = ""; // TODO add SQL
+    $position = retrieve_territory_position($territory["state_id"]);
+    $sql = "INSERT INTO territories (name, state_id, position) VALUES (";
+    $sql .= "'" . $territory['name'] . "',";
+    $sql .= "'" . $territory['state_id'] . "',";
+    $sql .= "'" . $position . "'";
+    $sql .= ");";
     // For INSERT statments, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
@@ -175,7 +187,10 @@
       return $errors;
     }
 
-    $sql = ""; // TODO add SQL
+    $sql = "UPDATE territories SET ";
+    $sql .= "name='" . $territory['name'] . "', ";
+    $sql .= "state_id='" . $territory['state_id'] . "' ";
+    $sql .= "WHERE id='" . $territory['id'] . "' LIMIT 1;";
     // For update_territory statments, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
@@ -223,10 +238,10 @@
   }
 
   function validate_salesperson($salesperson, $errors=array()) {
-    validate_name($salesperson["first_name"], $errors, "first");
-    validate_name($salesperson["last_name"], $errors, "last");
-    validate_phone($salesperson["phone"], $errors);
-    validate_email($salesperson["email"], $errors);
+    $errors = validate_name($salesperson["first_name"], $errors, "First");
+    $errors = validate_name($salesperson["last_name"], $errors, "Last");
+    $errors = validate_phone($salesperson["phone"], $errors);
+    $errors = validate_email($salesperson["email"], $errors);
     return $errors;
   }
 
@@ -239,7 +254,7 @@
     if (!empty($errors)) {
       return $errors;
     }
-    $sql = "INSERT INTO salesperson (first_name, last_name, phone, email) VALUES (";
+    $sql = "INSERT INTO salespeople (first_name, last_name, phone, email) VALUES (";
     $sql .= "'" . $salesperson['first_name'] . "',";
     $sql .= "'" . $salesperson['last_name'] . "',";
     $sql .= "'" . $salesperson['phone'] . "',";
@@ -267,11 +282,11 @@
     if (!empty($errors)) {
       return $errors;
     }
-    $sql = "UPDATE salesperson SET ";
+    $sql = "UPDATE salespeople SET ";
     $sql .= "first_name='" . $salesperson['first_name'] . "', ";
     $sql .= "last_name='" . $salesperson['last_name'] . "', ";
-    $sql .= "email='" . $salesperson['phone'] . "', ";
-    $sql .= "username='" . $salesperson['email'] . "' ";
+    $sql .= "phone='" . $salesperson['phone'] . "', ";
+    $sql .= "email='" . $salesperson['email'] . "' ";
     $sql .= "WHERE id='" . $salesperson['id'] . "' LIMIT 1;";
     // For update_salesperson statements, $result is just true/false
     $result = db_query($db, $sql);
@@ -321,10 +336,10 @@
   }
 
   function validate_user($user, $errors=array()) {
-    validate_name($user["first_name"], $errors, "first");
-    validate_name($user["last_name"], $errors, "last");
-    validate_phone($user["phone"], $errors);
-    validate_email($user["email"], $errors);
+    $errors = validate_name($user["first_name"], $errors, "First");
+    $errors = validate_name($user["last_name"], $errors, "Last");
+    $errors = validate_username($user["username"], $errors);
+    $errors = validate_email($user["email"], $errors);
     return $errors;
   }
 
@@ -344,7 +359,7 @@
     $sql .= "'" . $user['last_name'] . "',";
     $sql .= "'" . $user['email'] . "',";
     $sql .= "'" . $user['username'] . "',";
-    $sql .= "'" . $created_at . "',";
+    $sql .= "'" . $created_at . "'";
     $sql .= ");";
     // For INSERT statments, $result is just true/false
     $result = db_query($db, $sql);
@@ -376,7 +391,7 @@
     $sql .= "username='" . $user['username'] . "' ";
     $sql .= "WHERE id='" . $user['id'] . "' ";
     $sql .= "LIMIT 1;";
-    // For update_user statments, $result is just true/false
+    // For update_user statements, $result is just true/false
     $result = db_query($db, $sql);
     if($result) {
       return true;
@@ -388,5 +403,4 @@
       exit;
     }
   }
-
 ?>

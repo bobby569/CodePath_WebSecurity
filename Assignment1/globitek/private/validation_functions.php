@@ -30,7 +30,7 @@
   }
 
   function is_valid_name($value) {
-    return !preg_match('/[^a-z-,. \']/i', $value);
+    return !preg_match('/[^a-z-,. \']/', $value);
   }
 
   function is_valid_email($value) {

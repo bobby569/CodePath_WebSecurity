@@ -26,7 +26,7 @@ if(is_post_request()) {
         $salesperson['email'] = $_POST['email'];
     }
 
-    $result = update_user($salesperson);
+    $result = update_salesperson($salesperson);
     if($result === true) {
         redirect_to('show.php?id=' . $salesperson['id']);
     } else {
@@ -49,7 +49,7 @@ if(is_post_request()) {
         <input type="text" name="first_name" value="<?php echo $salesperson['first_name']; ?>" /><br />
         Last name:<br />
         <input type="text" name="last_name" value="<?php echo $salesperson['last_name']; ?>" /><br />
-        Username:<br />
+        Phone:<br />
         <input type="text" name="phone" value="<?php echo $salesperson['phone']; ?>" /><br />
         Email:<br />
         <input type="text" name="email" value="<?php echo $salesperson['email']; ?>" /><br />

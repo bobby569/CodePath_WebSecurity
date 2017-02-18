@@ -47,12 +47,11 @@ if(is_post_request()) {
         Code:<br />
         <input type="text" name="code" value="<?php echo $state['code']; ?>" /><br />
         Country id:<br />
-<!--        <input type="text" name="country_id" value="--><?php //echo $state['country_id']; ?><!--" /><br />-->
         <select name="country_id">
             <option value="0">Select</option>
-            <option value="1">1 - USA</option>
-            <option value="2">2 - UK</option>
-            <option value="3">3 - Others</option>
+            <option value="1" <?php echo ($state['country_id'] == "1")?'selected="selected"':''; ?>>1 - USA</option>
+            <option value="2" <?php echo ($state['country_id'] == "2")?'selected="selected"':''; ?>>2 - UK</option>
+            <option value="3" <?php echo ($state['country_id'] == "3")?'selected="selected"':''; ?>>3 - Others</option>
         </select>
         <br /><br />
         <input type="submit" name="submit" value="Update"  />
