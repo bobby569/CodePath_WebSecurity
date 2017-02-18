@@ -41,13 +41,13 @@ The following **required** functionality is completed:
 8\. [ ]  Required: Sanitization
   * [ ]  Required: All input and dynamic output should be sanitized.
   * [ ]  Required: Sanitize dynamic data for URLs
-  * [ ]  Required: Sanitize dynamic data for HTML
-  * [ ]  Required: Sanitize dynamic data for SQL
+  * [x]  Required: Sanitize dynamic data for HTML
+  * [x]  Required: Sanitize dynamic data for SQL
 
 9\. [ ]  Required: Penetration Testing
-  * [ ]  Required: Verify form inputs are not vulnerable to SQLI attacks.
+  * [x]  Required: Verify form inputs are not vulnerable to SQLI attacks.
   * [ ]  Required: Verify query strings are not vulnerable to SQLI attacks.
-  * [ ]  Required: Verify form inputs are not vulnerable to XSS attacks.
+  * [x]  Required: Verify form inputs are not vulnerable to XSS attacks.
   * [ ]  Required: Verify query strings are not vulnerable to XSS attacks.
   * [ ]  Required: Listed other bugs or security vulnerabilities
 
@@ -56,7 +56,7 @@ The following advanced user stories are optional:
 
 - [x]  Bonus: On "public/staff/territories/show.php", display the name of the state.
 
-- [x]  Bonus: Validate the uniqueness of `users.username`.
+- [ ]  Bonus: Validate the uniqueness of `users.username`.
 
 - [ ]  Bonus: Add a page for "public/staff/users/delete.php".
 

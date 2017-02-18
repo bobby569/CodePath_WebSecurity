@@ -14,10 +14,10 @@ $errors = array();
 if(is_post_request()) {
 
   // Confirm that values are present before accessing them.
-  if(isset($_POST['first_name'])) { $user['first_name'] = $_POST['first_name']; }
-  if(isset($_POST['last_name'])) { $user['last_name'] = $_POST['last_name']; }
-  if(isset($_POST['username'])) { $user['username'] = $_POST['username']; }
-  if(isset($_POST['email'])) { $user['email'] = $_POST['email']; }
+  if(isset($_POST['first_name'])) { $user['first_name'] = strip_tags($_POST['first_name']); }
+  if(isset($_POST['last_name'])) { $user['last_name'] = strip_tags($_POST['last_name']); }
+  if(isset($_POST['username'])) { $user['username'] = strip_tags($_POST['username']); }
+  if(isset($_POST['email'])) { $user['email'] = strip_tags($_POST['email']); }
 
   $result = update_user($user);
   if($result === true) {

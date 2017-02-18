@@ -14,16 +14,16 @@ $errors = array();
 if(is_post_request()) {
     // Confirm that values are present before accessing them.
     if(isset($_POST['first_name'])) {
-        $salesperson['first_name'] = $_POST['first_name'];
+        $salesperson['first_name'] = strip_tags($_POST['first_name']);
     }
     if(isset($_POST['last_name'])) {
-        $salesperson['last_name'] = $_POST['last_name'];
+        $salesperson['last_name'] = strip_tags($_POST['last_name']);
     }
     if(isset($_POST['phone'])) {
-        $salesperson['phone'] = $_POST['phone'];
+        $salesperson['phone'] = strip_tags($_POST['phone']);
     }
     if(isset($_POST['email'])) {
-        $salesperson['email'] = $_POST['email'];
+        $salesperson['email'] = strip_tags($_POST['email']);
     }
 
     $result = update_salesperson($salesperson);

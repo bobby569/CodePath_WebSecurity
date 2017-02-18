@@ -44,6 +44,7 @@
     $errors = validate_st_name($state["name"], $errors);
     $errors = validate_state_code($state["code"], $errors);
     $errors = validate_state_country_id($state["country_id"], $errors);
+    $errors = validate_SQL($state, $errors);
     return $errors;
   }
 
@@ -56,7 +57,6 @@
     if (!empty($errors)) {
       return $errors;
     }
-
     $sql = "INSERT INTO states (name, code, country_id) VALUES (";
     $sql .= "'" . $state['name'] . "',";
     $sql .= "'" . $state['code'] . "',";
@@ -84,7 +84,6 @@
     if (!empty($errors)) {
       return $errors;
     }
-
     $sql = "UPDATE states SET ";
     $sql .= "name='" . $state['name'] . "', ";
     $sql .= "code='" . $state['code'] . "', ";
@@ -138,6 +137,7 @@
   function validate_territory($territory, $errors=array()) {
     $errors = validate_st_name($territory["name"], $errors);
     $errors = validate_territory_position($territory["position"], $errors);
+    $errors = validate_SQL($territory, $errors);
     return $errors;
   }
 
@@ -150,7 +150,6 @@
     if (!empty($errors)) {
       return $errors;
     }
-
     $sql = "INSERT INTO territories (name, state_id, position) VALUES (";
     $sql .= "'" . $territory['name'] . "',";
     $sql .= "'" . $territory['state_id'] . "',";
@@ -178,7 +177,6 @@
     if (!empty($errors)) {
       return $errors;
     }
-
     $sql = "UPDATE territories SET ";
     $sql .= "name='" . $territory['name'] . "', ";
     $sql .= "position='" . $territory['position'] . "' ";
@@ -234,6 +232,7 @@
     $errors = validate_name($salesperson["last_name"], $errors, "Last");
     $errors = validate_phone($salesperson["phone"], $errors);
     $errors = validate_email($salesperson["email"], $errors);
+    $errors = validate_SQL($salesperson, $errors);
     return $errors;
   }
 
@@ -332,7 +331,8 @@
     $errors = validate_name($user["last_name"], $errors, "Last");
     $errors = validate_username($user["username"], $errors);
     $errors = validate_email($user["email"], $errors);
-    $errors = validate_unique_username($user["username"], $errors);
+    $errors = validate_SQL($user, $errors);
+    //$errors = validate_unique_username($user["username"], $errors);
     return $errors;
   }
 
@@ -340,12 +340,11 @@
   // Either returns true or an array of errors
   function insert_user($user) {
     global $db;
-
+    
     $errors = validate_user($user);
     if (!empty($errors)) {
       return $errors;
     }
-
     $created_at = date("Y-m-d H:i:s");
     $sql = "INSERT INTO users (first_name, last_name, email, username, created_at) VALUES (";
     $sql .= "'" . $user['first_name'] . "',";
@@ -371,12 +370,11 @@
   // Either returns true or an array of errors
   function update_user($user) {
     global $db;
-
+    
     $errors = validate_user($user);
     if (!empty($errors)) {
       return $errors;
     }
-
     $sql = "UPDATE users SET ";
     $sql .= "first_name='" . $user['first_name'] . "', ";
     $sql .= "last_name='" . $user['last_name'] . "', ";

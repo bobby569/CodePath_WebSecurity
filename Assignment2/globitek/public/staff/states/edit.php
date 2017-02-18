@@ -14,13 +14,13 @@ $errors = array();
 if(is_post_request()) {
     // Confirm that values are present before accessing them.
     if(isset($_POST['name'])) {
-        $state['name'] = $_POST['name'];
+        $state['name'] = strip_tags($_POST['name']);
     }
     if(isset($_POST['code'])) {
-        $state['code'] = $_POST['code'];
+        $state['code'] = strip_tags($_POST['code']);
     }
     if(isset($_POST['country_id'])) {
-        $state['country_id'] = $_POST['country_id'];
+        $state['country_id'] = strip_tags($_POST['country_id']);
     }
 
     $result = update_state($state);

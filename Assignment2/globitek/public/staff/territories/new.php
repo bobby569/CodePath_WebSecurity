@@ -14,10 +14,10 @@ $territory = array(
 if(is_post_request()) {
     // Confirm that values are present before accessing them.
     if(isset($_POST['name'])) {
-        $territory['name'] = $_POST['name'];
+        $territory['name'] = strip_tags($_POST['name']);
     }
     if(isset($_POST['position'])) {
-        $territory['position'] = $_POST['position'];
+        $territory['position'] = strip_tags($_POST['position']);
     }
 
     $result = insert_territory($territory);

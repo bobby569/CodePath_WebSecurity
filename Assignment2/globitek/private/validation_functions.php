@@ -87,6 +87,7 @@
     if (intval($data['total']) != 0) {
         array_push($errors, "The username has already been used");
     }
+    mysqli_close($mysqli);
     return $errors;
   }
 
@@ -154,5 +155,22 @@
     }
     return $errors;
   }
+
+  function validate_SQL($values, $errors=array()) {
+    $link = db_connect();
+    foreach ($values as $value) {
+      $value_clean = mysqli_real_escape_string($link, $value);
+      if (strcmp($value, $value_clean) != 0) {
+        array_push($errors, "SQL injection detected");
+        break;
+      }
+    }
+    mysqli_close($link);
+    return $errors;
+  }
+
+//  function sanitize($value, $errors=array()) {
+//
+//  }
 
 ?>
