@@ -4,7 +4,7 @@
 if(!isset($_GET['id'])) {
   redirect_to('index.php');
 }
-$id = $_GET['id'];
+$id = validate_query($_GET['id']);
 $territory_result = find_territory_by_id($id);
 $territory = db_fetch_assoc($territory_result);
 

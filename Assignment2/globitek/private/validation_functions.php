@@ -156,7 +156,7 @@
     return $errors;
   }
 
-  function validate_SQL($values, $errors=array()) {
+  function validate_input($values, $errors=array()) {
     $link = db_connect();
     foreach ($values as $value) {
       $value_clean = mysqli_real_escape_string($link, $value);
@@ -169,8 +169,9 @@
     return $errors;
   }
 
-//  function sanitize($value, $errors=array()) {
-//
-//  }
+  function validate_query($value) {
+    $id = raw_u(strip_tags(rawurldecode($value)));
+    return htmlEntities($id, ENT_QUOTES);
+  }
 
 ?>

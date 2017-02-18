@@ -4,7 +4,8 @@ require_once('../../../private/initialize.php');
 if(!isset($_GET['id'])) {
   redirect_to('index.php');
 }
-$states_result = find_state_by_id($_GET['id']);
+$id = validate_query($_GET['id']);
+$states_result = find_state_by_id($id);
 // No loop, only one result
 $state = db_fetch_assoc($states_result);
 

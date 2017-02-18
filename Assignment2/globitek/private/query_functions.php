@@ -44,7 +44,7 @@
     $errors = validate_st_name($state["name"], $errors);
     $errors = validate_state_code($state["code"], $errors);
     $errors = validate_state_country_id($state["country_id"], $errors);
-    $errors = validate_SQL($state, $errors);
+    $errors = validate_input($state, $errors);
     return $errors;
   }
 
@@ -137,7 +137,7 @@
   function validate_territory($territory, $errors=array()) {
     $errors = validate_st_name($territory["name"], $errors);
     $errors = validate_territory_position($territory["position"], $errors);
-    $errors = validate_SQL($territory, $errors);
+    $errors = validate_input($territory, $errors);
     return $errors;
   }
 
@@ -232,7 +232,7 @@
     $errors = validate_name($salesperson["last_name"], $errors, "Last");
     $errors = validate_phone($salesperson["phone"], $errors);
     $errors = validate_email($salesperson["email"], $errors);
-    $errors = validate_SQL($salesperson, $errors);
+    $errors = validate_input($salesperson, $errors);
     return $errors;
   }
 
@@ -331,7 +331,7 @@
     $errors = validate_name($user["last_name"], $errors, "Last");
     $errors = validate_username($user["username"], $errors);
     $errors = validate_email($user["email"], $errors);
-    $errors = validate_SQL($user, $errors);
+    $errors = validate_input($user, $errors);
     //$errors = validate_unique_username($user["username"], $errors);
     return $errors;
   }

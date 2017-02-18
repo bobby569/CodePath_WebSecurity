@@ -4,7 +4,8 @@ require_once('../../../private/initialize.php');
 if(!isset($_GET['id'])) {
   redirect_to('index.php');
 }
-$territories_result = find_territory_by_id($_GET['id']);
+$id = validate_query($_GET['id']);
+$territories_result = find_territory_by_id($id);
 // No loop, only one result
 $territory = db_fetch_assoc($territories_result);
 
