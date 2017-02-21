@@ -5,8 +5,12 @@
 ob_start();
 
 // Enable sessions
-// TODO add configurations
-session_start();
+session_start([
+    'use_only_cookie' => 1,
+    'cookie_lifetime' => 86400,
+    'cookie_secure' => 1,
+    'cookie_httponly' => 1
+]);
 
 // Turns off any browser built-in XSS protections
 // LEAVE THIS LINE IN WHILE YOU ARE LEARNING

@@ -4,7 +4,9 @@
   // Also protects user from session fixation.
   function log_in_user($user) {
     // TODO Store user's ID in session
+    $_SESSION['user_id'] = ;
     // TODO Store last login time in session
+    $_SESSION['last_login'] = ;
     return true;
   }
 

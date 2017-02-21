@@ -21,6 +21,9 @@ if(is_post_request()) {
   if (is_blank($username)) {
     $errors[] = "Username cannot be blank.";
   }
+  if (!has_valid_username_format($username)) {
+    $errors[] = "Invalid username.";
+  }
   if (is_blank($password)) {
     $errors[] = "Password cannot be blank.";
   }
@@ -39,11 +42,11 @@ if(is_post_request()) {
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
-        $errors[] = ""; // TODO write an error message
+        $errors[] = "The password does not match the username";
       }
     } else {
       // No username found
-      $errors[] = ""; // TODO write an error message
+      $errors[] = "The username is not found in the database";
     }
   }
 }
