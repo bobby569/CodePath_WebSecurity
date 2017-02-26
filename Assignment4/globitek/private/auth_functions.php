@@ -29,7 +29,6 @@
       return false;
     }
     return ($_SESSION['last_login'] + $recent_limit) >= time();
-    return ;
   }
 
   // Checks to see if the user-agent string of the current request
@@ -47,7 +46,7 @@
   // Inspects the session to see if it should be considered valid.
   function session_is_valid() {
     if(!last_login_is_recent()) { return false; }
-    // if(!user_agent_matches_session()) { return false; }
+    if(!user_agent_matches_session()) { return false; }
     return true;
   }
 
@@ -66,7 +65,7 @@
   }
 
   // Call require_login() at the top of any page which needs to
-  // require a valid login before granting acccess to the page.
+  // require a valid login before granting access to the page.
   function require_login() {
     if(!is_logged_in()) {
       destroy_current_session();
