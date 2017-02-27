@@ -4,18 +4,6 @@
     <list default="true" id="33aa4dbe-b18e-4fc6-8a71-def3a877aeff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/README.md" afterPath="$PROJECT_DIR$/Assignment4/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/private/validation_functions.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/private/validation_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/countries/edit.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/countries/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/countries/show.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/countries/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/login.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/salespeople/edit.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/salespeople/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/salespeople/show.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/salespeople/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/states/edit.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/states/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/states/show.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/states/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/territories/edit.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/territories/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/territories/show.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/territories/show.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/users/edit.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/users/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assignment4/globitek/public/staff/users/show.php" afterPath="$PROJECT_DIR$/Assignment4/globitek/public/staff/users/show.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -119,8 +107,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="2" />
+    <option name="y" value="12" />
+    <option name="width" value="1276" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -137,8 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,100 +171,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignment4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globitek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignment4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globitek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staff" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignment4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globitek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="private" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodePath_WebSecurity" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assignment4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="globitek" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pen_tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,17 +267,18 @@
       <workItem from="1487629702434" duration="2241000" />
       <workItem from="1488058124180" duration="7439000" />
       <workItem from="1488169264726" duration="1000" />
+      <workItem from="1488169372599" duration="241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43226000" />
+    <option name="totallyTimeSpent" value="43467000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="2" y="12" width="1276" height="777" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25444266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25850892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -495,9 +394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding>
-            <marker date="1488130918000" expanded="true" signature="385:398" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -540,9 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding>
-            <marker date="1488130919000" expanded="true" signature="348:361" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,7 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="2" lean-forward="false" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,7 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,7 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,9 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding>
-            <marker date="1488130919000" expanded="true" signature="369:382" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,7 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,9 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487027734000" expanded="true" signature="378:391" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,31 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4265">
           <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="28" />
-          <folding>
-            <element signature="n#find_all_states#0;n#!!top" expanded="false" />
-            <element signature="n#find_states_for_country_id#0;n#!!top" expanded="false" />
-            <marker date="1487433102000" expanded="true" signature="142:183" ph="SELECT * FRO... countries" />
-            <marker date="1487433102000" expanded="true" signature="390:428" ph="SELECT * FRO... states" />
-            <marker date="1487433102000" expanded="true" signature="625:702" ph="SELECT * FRO... states" />
-            <marker date="1487433102000" expanded="true" signature="865:908" ph="SELECT * FRO... states" />
-            <marker date="1487433102000" expanded="true" signature="1535:1587" ph="INSERT INTO states... " />
-            <marker date="1487433102000" expanded="true" signature="2261:2278" ph="UPDATE state... " />
-            <marker date="1487433102000" expanded="true" signature="2937:2962" ph="SELECT * FRO... territories" />
-            <marker date="1487433102000" expanded="true" signature="3253:3278" ph="SELECT * FRO... territories" />
-            <marker date="1487433102000" expanded="true" signature="3546:3571" ph="SELECT * FRO... territories" />
-            <marker date="1487433102000" expanded="true" signature="4225:4284" ph="INSERT INTO territories... " />
-            <marker date="1487433102000" expanded="true" signature="4996:5018" ph="UPDATE terri... " />
-            <marker date="1487433102000" expanded="true" signature="5659:5723" ph="SELECT * FRO... salespeople" />
-            <marker date="1487433102000" expanded="true" signature="6081:6351" ph="SELECT * FRO... salespeople" />
-            <marker date="1487433102000" expanded="true" signature="6541:6589" ph="SELECT * FRO... salespeople" />
-            <marker date="1487433102000" expanded="true" signature="7359:7429" ph="INSERT INTO salespeople... " />
-            <marker date="1487433102000" expanded="true" signature="8204:8226" ph="UPDATE sales... " />
-            <marker date="1487433102000" expanded="true" signature="9101:9126" ph="SELECT * FRO... territories" />
-            <marker date="1487433102000" expanded="true" signature="9596:9654" ph="SELECT * FRO... users" />
-            <marker date="1487433102000" expanded="true" signature="9818:9868" ph="SELECT * FRO... users" />
-            <marker date="1487433102000" expanded="true" signature="10661:10740" ph="INSERT INTO users... " />
-            <marker date="1487433102000" expanded="true" signature="11497:11513" ph="UPDATE users... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="925" column="9" lean-forward="false" selection-start-line="925" selection-start-column="9" selection-end-line="925" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,9 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1639">
           <caret line="171" column="25" lean-forward="false" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="25" />
-          <folding>
-            <marker date="1487434147000" expanded="true" signature="2575:2648" ph="SELECT COUNT... USERS" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,8 +705,8 @@
     <entry file="file://$PROJECT_DIR$/Assignment4/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="675">
-            <caret line="45" column="6" lean-forward="false" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+          <first_editor relative-caret-position="1065">
+            <caret line="71" column="40" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
             <folding />
           </first_editor>
           <second_editor />
