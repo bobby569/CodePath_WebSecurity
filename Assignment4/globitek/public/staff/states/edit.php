@@ -12,7 +12,7 @@ $state = db_fetch_assoc($states_result);
 // Set default values for all variables the page needs.
 $errors = array();
 
-if(is_post_request()) {
+if(is_post_request() && csrf_token_is_valid()) {
 
   // Confirm that values are present before accessing them.
   if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
@@ -25,6 +25,8 @@ if(is_post_request()) {
   } else {
     $errors = $result;
   }
+} else {
+  echo "<script>alert('Error');</script>";
 }
 ?>
 <?php $page_title = 'Staff: Edit State ' . $state['name']; ?>
@@ -38,6 +40,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="edit.php?id=<?php echo h(u($state['id'])); ?>" method="post">
+    <?php echo csrf_token_tag(); ?>
     Name:<br />
     <input type="text" name="name" value="<?php echo h($state['name']); ?>" /><br />
     Code:<br />

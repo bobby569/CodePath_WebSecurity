@@ -14,7 +14,7 @@ $state = array(
   'country_id' => $_GET['id']
 );
 
-if(is_post_request()) {
+if(is_post_request() && csrf_token_is_valid()) {
 
   // Confirm that values are present before accessing them.
   if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
@@ -27,6 +27,8 @@ if(is_post_request()) {
   } else {
     $errors = $result;
   }
+} else {
+  echo "<script>alert('Error');</script>";
 }
 ?>
 <?php $page_title = 'Staff: New State'; ?>
@@ -40,6 +42,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="new.php?id=<?php echo h($state['country_id']); ?>" method="post">
+    <?php echo csrf_token_tag(); ?>
     Name:<br />
     <input type="text" name="name" value="<?php echo h($state['name']); ?>" /><br />
     Code:<br />
