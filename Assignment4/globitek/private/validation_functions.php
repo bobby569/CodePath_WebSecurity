@@ -31,9 +31,30 @@
     return preg_match('/\A[A-Za-z0-9_]+\Z/', $value);
   }
 
+  function is_valid_username($value) {
+    return !preg_match('/[^A-Za-z0-9_]/', $value);
+  }
+
+  function starts_with_alpha($value) {
+    return ctype_alpha(substr($value, 0, 1));
+  }
+
   // has_valid_phone_format('(212) 555-6666')
   function has_valid_phone_format($value) {
     return preg_match('/\A[0-9\-\(\)]+\Z/', $value);
+  }
+
+  function validate_username($value, $errors=array()) {
+    if (is_blank($value)) {
+        array_push($errors, "Username cannot be blank");
+    } elseif (!has_length($value, array('max' => 255))) {
+        array_push($errors, "Username must be less than 255 characters");
+    } elseif (!starts_with_alpha($value)) {
+        array_push($errors, "The username needs to start with alphabet");
+    } elseif (!is_valid_username($value)) {
+        array_push($errors, "Username should only contain: letters, numbers, symbols(_)");
+    }
+    return $errors;
   }
 
   // Works for both new records and existing records, just
@@ -54,6 +75,24 @@
     // Returns true at the end, but only if the loop had no records
     // to loop through or if the loop never returned false.
     return true;  // username is not used by anyone
+  }
+
+  function validate_input($values, $errors=array()) {
+    $link = db_connect();
+    foreach ($values as $value) {
+        $value_clean = mysqli_real_escape_string($link, $value);
+        if (strcmp($value, $value_clean) != 0) {
+            array_push($errors, "SQL injection detected");
+            break;
+        }
+    }
+    mysqli_close($link);
+    return $errors;
+  }
+
+  function validate_query($value) {
+    $id = raw_u(strip_tags(rawurldecode($value)));
+    return htmlEntities($id, ENT_QUOTES);
   }
 
 ?>

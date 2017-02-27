@@ -14,8 +14,12 @@ $password = '';
 if(is_post_request()) {
 
   // Confirm that values are present before accessing them.
-  if(isset($_POST['username'])) { $username = $_POST['username']; }
-  if(isset($_POST['password'])) { $password = $_POST['password']; }
+  if(isset($_POST['username'])) {
+    $username = strip_tags($_POST['username']);
+  }
+  if(isset($_POST['password'])) {
+    $password = strip_tags($_POST['password']);
+  }
 
   // Validations
   if (is_blank($username)) {
@@ -27,6 +31,8 @@ if(is_post_request()) {
   if (is_blank($password)) {
     $errors[] = "Password cannot be blank.";
   }
+  $errors = validate_username($username, $errors);
+  $errors = validate_input($username, $errors);
 
   // If there were no errors, submit data to database
   if (empty($errors)) {

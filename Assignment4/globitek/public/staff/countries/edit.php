@@ -4,7 +4,8 @@ require_login();
 if(!isset($_GET['id'])) {
   redirect_to('index.php');
 }
-$countries_result = find_country_by_id($_GET['id']);
+$id = validate_query($_GET['id']);
+$countries_result = find_country_by_id($id);
 // No loop, only one result
 $country = db_fetch_assoc($countries_result);
 
