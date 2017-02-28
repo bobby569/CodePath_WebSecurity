@@ -40,31 +40,37 @@ const PUBLIC_KEY_CONFIG = array(
 );
 
 function generate_keys($config=PUBLIC_KEY_CONFIG) {
-  $private_key = 'Ha ha!';
-  $public_key = 'Ho ho!';
-
+  $resource = openssl_pkey_new($config);
+  // Extract private key from the pair
+  openssl_pkey_export($resource, $private_key);
+  // Extract public key from the pair
+  $key_details = openssl_pkey_get_details($resource);
+  $public_key = $key_details["key"];
   return array('private' => $private_key, 'public' => $public_key);
 }
 
 function pkey_encrypt($string, $public_key) {
-  //return key_encrypt($string, $public_key);
+  openssl_public_encrypt($string, $encrypted, $public_key);
+  return base64_encode($encrypted);
 }
 
 function pkey_decrypt($string, $private_key) {
-  return str_rot13($string);
+  openssl_private_decrypt(base64_decode($string), $decrypted, $private_key);
+  return $decrypted;
 }
-
 
 // Digital signatures using public/private keys
 
 function create_signature($data, $private_key) {
   // A-Za-z : ykMwnXKRVqheCFaxsSNDEOfzgTpYroJBmdIPitGbQUAcZuLjvlWH
-  return 'RpjJ WQL BImLcJo QLu dQv vJ oIo Iu WJu?';
+  openssl_sign($data, $raw_signature, $private_key);
+  return base64_encode($raw_signature);
 }
 
 function verify_signature($data, $signature, $public_key) {
   // Vigenère
-  return 'RK, pym oays onicvr. Iuw bkzhvbw uedf pke conll rt ZV nzxbhz.';
+  $raw_signature = base64_decode($signature);
+  return openssl_verify($data, $raw_signature, $public_key);
 }
 
 ?>
