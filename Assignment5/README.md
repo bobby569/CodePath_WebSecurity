@@ -7,37 +7,48 @@ Time spent: **X** hours spent in total
 The following **required** functionality is completed:
 
 1\. Symmetric Encrypt/Decrypt
-  * [ ]  Required: Repair the symmetric encrypt and decrypt code
+  * [x]  Required: Repair the symmetric encrypt and decrypt code
 
 2\. Encrypted Message 1
-  * [ ]  Required: Decrypt the government message
-  * [ ]  Required: Encrypt a response and include in this README
+  * [x]  Required: Decrypt the government message
+  * [x]  Required: Encrypt a response and include in this README
+  `D0WgosuYHkhcnstn3AqledqIayeHU8gHFZb9gHA/9kLjAYIlPHPbUbRWKdghg6Nt1ZMo4ZdyusBpZbNILYGi5Q==`
 
 3\. Generate Public-Private Keys
-  * [ ]  Required: Repair the key generator code
-  * [ ]  Required: Generate keys for "johnsteed" and add him to the Agent Directory
+  * [x]  Required: Repair the key generator code
+  * [x]  Required: Generate keys for "johnsteed" and add him to the Agent Directory
 
 4\. Asymmetric Encrypt/Decrypt
-  * [ ]  Required: Repair the asymmetric encrypt and decrypt code
+  * [x]  Required: Repair the asymmetric encrypt and decrypt code
 
 5\. Create/Verify Signature
-  * [ ]  Required: Repair the create and verify signature code
+  * [x]  Required: Repair the create and verify signature code
   
 6\. Encrypted Message 2
-  * [ ]  Required: Decrypt the message
-  * [ ]  Required: Verify the message
-  * [ ]  Required: Include a response message in this README
+  * [x]  Required: Decrypt the message
+  * [x]  Required: Verify the message
+  * [x]  Required: Include a response message in this README
+  `O1rsgt+tx+QjN2OTys0YhbZxz8VfYr6fn37WDtUilcuZKhEftZ7Zxh8i1KaCsBTWRsMsvuaukeE01Yb6mdUha9I1qm0eQA77y7jh+0N1RiSLuFmiGdFHun/OJykMZdjPnQdNtzo5eVaml4oGeBzXK8tJVbilY5WAVf4qx9wHbw/UAxjYxg/oxcUm6CgowRn70am9yTPLJTsqXdOygV17lZ0WcSGiCoQOdQ3IOKfeNe2RlJfmcVMhvCkTrIUwXYGqan4arW+OXSV9ZSvyz7xCp56BZyb3rjuEYa7NjN6Ag/qaBGI3canSPc2tsakCoRM3JUp5o/Nk8hH+ig+Uvub6Ow==`
+  `-----BEGIN PUBLIC KEY-----
+   MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxdcAzOyx1IjEcmphIKIs
+   ed2YVZQBtWgZg18ZebyphgCUVLfBH8CwGEES4g/vDmMMKeJdPyBy6tLZ86o86nPR
+   uSV5oPUuvPbuGdM/Fe49brq6YD0fLcYzV1f5JXKHPwct8zchvZiqYy5w+ktN9xHI
+   putlkohD9nL8qTF+gNpnGK7kRSxGFl9XA37IAhrAdIEFjOXT3l3xP4wBXAiBRE9p
+   Vwm5G7Flx11k/kVg1xJO8kqAjePs9D7oOewh72WCXYAmzp6w9oGdjif6M1fWlz5p
+   zuiEKa0e4rnvzhZKmbp+o0hpZ+8LR5SL0GGlqo6W0BC2XUqIiVFL1VQO6rGm6Y6R
+   HwIDAQAB
+   -----END PUBLIC KEY-----`
 
 7\. Agent Messages
-  * [ ]  Required: Repair the dropbox code
-  * [ ]  Required: Repair the messages area
-  * [ ]  Required: Display encrypted messages for all agents
-  * [ ]  Required: Messages indicate whether the message signature is valid
-  * [ ]  Required: Your messages are automatically decrypted
+  * [x]  Required: Repair the dropbox code
+  * [x]  Required: Repair the messages area
+  * [x]  Required: Display encrypted messages for all agents
+  * [x]  Required: Messages indicate whether the message signature is valid
+  * [x]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
-  * [ ]  Required: Decrypt as many email messages as possible
-  * [ ]  Required: Identify the double agent: ____________________
+  * [x]  Required: Decrypt as many email messages as possible
+  * [x]  Required: Identify the double agent: **Natasha**
 
 The following objectives are **optional**:
 
@@ -59,7 +70,7 @@ The following objectives are **optional**:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/bZd35KZ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

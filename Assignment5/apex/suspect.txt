@@ -1,0 +1,7 @@
+1. The SQL injection we discussed is in place. Just search for an agent.
+
+3. Today I was able to sneak several XSS vulnerabilities onto one of the encrypt/decrypt pages.
+
+5. (Invalid) Let me know before you go inside. I'll create a distraction. - Austin
+
+6. (Valid) Let me know before you go inside. I'll create a distraction. - Natasha

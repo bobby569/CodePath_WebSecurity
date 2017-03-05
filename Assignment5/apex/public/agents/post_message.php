@@ -8,10 +8,13 @@
       redirect_to('index.php');
     }
 
-    // I'm sorry, did you need this code? ;)
-    // Guess you'll just have to re-write it.
-    // With love, Dark Shadow
-    
+    $sender = $current_user;
+    $agent_result = find_agent_by_id($_GET['id']);
+    $agent = db_fetch_assoc($agent_result);
+    $plain_text = isset($_POST['plain_text'])? $_POST['plain_text'] : "";
+    $encrypted_text = pkey_encrypt($plain_text, $agent['public_key']);
+    $signature = create_signature($encrypted_text, $sender['private_key']);
+
     $message = [
       'sender_id' => $sender['id'],
       'recipient_id' => $agent['id'],

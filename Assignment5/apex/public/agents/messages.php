@@ -44,12 +44,15 @@
       
       <?php while($message = db_fetch_assoc($message_result)) { ?>
         <?php
+          $sender_result = find_agent_by_id($message['sender_id']);
+          $sender = db_fetch_assoc($sender_result);
           $created_at = strtotime($message['created_at']);
-          
-          // Oooops.
-          // My finger accidentally hit the delete-key.
-          // Sorry, APEX!!!
-          
+          if ($current_user['id'] == $agent['id']) {
+            $message_text = pkey_decrypt($message['cipher_text'], $current_user['private_key']);
+          } else {
+            $message_text = $message['cipher_text'];
+          }
+          $validity_text = verify_signature($message['cipher_text'], $message['signature'], $sender['public_key'])? "Valid" : "Invalid";
         ?>
         <tr>
           <td><?php echo h(strftime('%b %d, %Y at %H:%M', $created_at)); ?></td>
