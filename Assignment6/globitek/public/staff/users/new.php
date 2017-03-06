@@ -9,7 +9,9 @@ $user = array(
   'first_name' => '',
   'last_name' => '',
   'username' => '',
-  'email' => ''
+  'email' => '',
+  'password' => '',
+  'password_confirm' => ''
 );
 
 if(is_post_request() && request_is_same_domain()) {
@@ -20,6 +22,8 @@ if(is_post_request() && request_is_same_domain()) {
   if(isset($_POST['last_name'])) { $user['last_name'] = $_POST['last_name']; }
   if(isset($_POST['username'])) { $user['username'] = $_POST['username']; }
   if(isset($_POST['email'])) { $user['email'] = $_POST['email']; }
+  if(isset($_POST['password'])) { $user['password'] = $_POST['password']; }
+  if(isset($_POST['password_confirm'])) { $user['password_confirm'] = $_POST['password_confirm']; }
 
   $result = insert_user($user);
   if($result === true) {
@@ -50,6 +54,13 @@ if(is_post_request() && request_is_same_domain()) {
     <input type="text" name="username" value="<?php echo h($user['username']); ?>" /><br />
     Email:<br />
     <input type="text" name="email" value="<?php echo h($user['email']); ?>" /><br />
+    Password:<br />
+    <input type="password" name="password" value="" /><br />
+    Confirm Password:<br />
+    <input type="password" name="password_confirm" value="" /><br />
+    <p>
+      Passwords should be at least 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.
+    </p>
     <br />
     <input type="submit" name="submit" value="Create"  />
   </form>
