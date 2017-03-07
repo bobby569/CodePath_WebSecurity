@@ -516,6 +516,8 @@
     } elseif (!is_unique_username($user['username'], $user['id'])) {
       $errors[] = "Username not allowed. Try another.";
     }
+    $errors = validate_password($user['password'], $user['password_confirm'], $errors);
+    $errors = validate_input($user, $errors);
     return $errors;
   }
 
@@ -531,12 +533,13 @@
 
     $created_at = date("Y-m-d H:i:s");
     $sql = "INSERT INTO users ";
-    $sql .= "(first_name, last_name, email, username, created_at) ";
+    $sql .= "(first_name, last_name, email, username, hashed_password, created_at) ";
     $sql .= "VALUES (";
     $sql .= "'" . db_escape($db, $user['first_name']) . "',";
     $sql .= "'" . db_escape($db, $user['last_name']) . "',";
     $sql .= "'" . db_escape($db, $user['email']) . "',";
     $sql .= "'" . db_escape($db, $user['username']) . "',";
+    $sql .= "'" . db_escape($db, password_hash($user['password'], PASSWORD_BCRYPT)) . "',";
     $sql .= "'" . $created_at . "'";
     $sql .= ");";
     // For INSERT statements, $result is just true/false
@@ -566,7 +569,8 @@
     $sql .= "first_name='" . db_escape($db, $user['first_name']) . "', ";
     $sql .= "last_name='" . db_escape($db, $user['last_name']) . "', ";
     $sql .= "email='" . db_escape($db, $user['email']) . "', ";
-    $sql .= "username='" . db_escape($db, $user['username']) . "' ";
+    $sql .= "username='" . db_escape($db, $user['username']) . "', ";
+    $sql .= "hashed_password='" . db_escape($db, password_hash($user['password'], PASSWORD_BCRYPT)) . "' ";
     $sql .= "WHERE id='" . db_escape($db, $user['id']) . "' ";
     $sql .= "LIMIT 1;";
     // For update_user statements, $result is just true/false

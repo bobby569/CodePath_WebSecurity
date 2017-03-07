@@ -36,6 +36,10 @@
     return preg_match('/\A[0-9\-\(\)]+\Z/', $value);
   }
 
+  function is_valid_password($value){
+    return preg_match('/[~!@#$%^&*+=]/', $value) && preg_match('/[A-Za-z0-9]/', $value);
+  }
+
   // Works for both new records and existing records, just
   // add the current ID of an existing record as the second
   // argument.
@@ -54,6 +58,37 @@
     // Returns true at the end, but only if the loop had no records
     // to loop through or if the loop never returned false.
     return true;  // username is not used by anyone
+  }
+
+  function validate_password($password, $password_confirm, $errors=array()) {
+    if (is_blank($password) || is_blank($password_confirm)) {
+        array_push($errors, "Password field(s) cannot leave blank");
+    } elseif (strcmp($password, $password_confirm) != 0) {
+        array_push($errors, "Passwords do not match");
+    } elseif (has_length($password, array('min' => 12))) {
+        array_push($errors, "Password need to be at least 12 characters");
+    } elseif (!is_valid_password($password)) {
+        array_push($errors, "Password must contain at least one of each: uppercase letter, lowercase letter, number, symbol.");
+    }
+    return $errors;
+  }
+
+  function validate_input($values, $errors=array()) {
+    $link = db_connect();
+    foreach ($values as $value) {
+      $value_clean = mysqli_real_escape_string($link, $value);
+      if (strcmp($value, $value_clean) != 0) {
+        array_push($errors, "SQL injection detected");
+        break;
+      }
+    }
+    mysqli_close($link);
+    return $errors;
+  }
+
+  function validate_query($value) {
+    $id = raw_u(strip_tags(rawurldecode($value)));
+    return htmlEntities($id, ENT_QUOTES);
   }
 
 ?>

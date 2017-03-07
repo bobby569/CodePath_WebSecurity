@@ -11,19 +11,19 @@ The following **required** functionality is completed:
   * [x]  Strong password requirements text
 
 2\. Data validations
-  * [ ]  Returns an error if password or confirm_password are blank.
-  * [ ]  Returns an error if password and confirm_password do not match.
-  * [ ]  Returns an error if password is not at least 12 characters long.
-  * [ ]  Returns an error if password does not meet character requirements.
+  * [x]  Returns an error if password or confirm_password are blank.
+  * [x]  Returns an error if password and confirm_password do not match.
+  * [x]  Returns an error if password is not at least 12 characters long.
+  * [x]  Returns an error if password does not meet character requirements.
   * [ ]  Returns any errors related to other validations already on the user.
 
 3\. Saving a user
-  * [ ]  Encrypts the password
-  * [ ]  Stores the password in the database
+  * [x]  Encrypts the password
+  * [x]  Stores the password in the database
 
 4\. Login page
-  * [ ]  Verify the correct password.
-  * [ ]  Do not create a User Enumeration vulnerability.
+  * [x]  Verify the correct password.
+  * [x]  Do not create a User Enumeration vulnerability.
 
 5\. If a user fails to log in:
   * [ ]  Record the failed login for the first 5 attempts.

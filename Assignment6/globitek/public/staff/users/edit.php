@@ -16,12 +16,12 @@ if(is_post_request() && request_is_same_domain()) {
   ensure_csrf_token_valid();
 
   // Confirm that values are present before accessing them.
-  if(isset($_POST['first_name'])) { $user['first_name'] = $_POST['first_name']; }
-  if(isset($_POST['last_name'])) { $user['last_name'] = $_POST['last_name']; }
-  if(isset($_POST['username'])) { $user['username'] = $_POST['username']; }
-  if(isset($_POST['email'])) { $user['email'] = $_POST['email']; }
-  if(isset($_POST['password'])) { $user['password'] = $_POST['password']; }
-  if(isset($_POST['password_confirm'])) { $user['password_confirm'] = $_POST['password_confirm']; }
+  if(isset($_POST['first_name'])) { $user['first_name'] = validate_query($_POST['first_name']); }
+  if(isset($_POST['last_name'])) { $user['last_name'] = validate_query($_POST['last_name']); }
+  if(isset($_POST['username'])) { $user['username'] = validate_query($_POST['username']); }
+  if(isset($_POST['email'])) { $user['email'] = validate_query($_POST['email']); }
+  if(isset($_POST['password'])) { $user['password'] = validate_query($_POST['password']); }
+  if(isset($_POST['password_confirm'])) { $user['password_confirm'] = validate_query($_POST['password_confirm']); }
 
 
   $result = update_user($user);
