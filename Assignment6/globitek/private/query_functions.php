@@ -607,5 +607,60 @@
     }
   }
 
+  // Get login information
+  function find_login($username) {
+    global $db;
+    $sql = "SELECT FROM login WHERE username='". $username . "';";
+    $result = db_query($db, $sql);
+    return $result;
+  }
+
+  function remove_failed_login($username) {
+    global $db;
+    $sql = "DELETE FROM login WHERE username='" . $username . "' LIMIT 1";
+    $result = db_query($db, $sql);
+    if($result) {
+      return true;
+    } else {
+      // The SQL DELETE statement failed.
+      // Just show the error, not the form
+      echo db_error($db);
+      db_close($db);
+      exit;
+    }
+  }
+
+  function insert_failed_login($login) {
+    global $db;
+    $sql = "INSERT INTO login VALUES ('" . $login['username'] . "', " . $login['count'] . ", '" . $login['last_attempt'] ."')";
+    $result = db_query($db, $sql);
+    if($result) {
+      return true;
+    } else {
+      // The SQL INSERT statement failed.
+      // Just show the error, not the form
+      echo db_error($db);
+      db_close($db);
+      exit;
+    }
+  }
+
+  function update_failed_login($login) {
+    global $db;
+    $sql = "UPDATE login SET count=" . $login['count'] . ", last_attempt='" . $login['last_attempt'] . "' LIMIT 1;";
+    $result = db_query($db, $sql);
+    if($result) {
+      return true;
+    } else {
+      // The SQL UPDATE statement failed.
+      // Just show the error, not the form
+      echo db_error($db);
+      db_close($db);
+      exit;
+    }
+
+  }
+
+
 
 ?>
