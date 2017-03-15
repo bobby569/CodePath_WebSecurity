@@ -51,4 +51,48 @@
     return $output;
   }
 
+  // Deal with login
+  function update_login($username, $success, $errors=array()) {
+    $sql_date = date("Y-m-d H:i:s");
+    $fl_result = find_login($username);
+    $login = db_fetch_assoc($fl_result);
+
+    if ($success) {
+      if ($login) {
+        remove_failed_login($username);
+      }
+      return $errors;
+    } else {
+      if (!$login) {
+        $login = [
+          'username' => $username,
+          'count' => 1,
+          'last_attempt' => $sql_date
+        ];
+        insert_failed_login($login);
+        array_push($errors, "Login fails");
+      } else {
+        $login['count'] = $login['count'] + 1;
+        $login['last_attempt'] = $sql_date;
+        update_failed_login($login);
+        $time_remain = check_time_remain($login);
+        if ($login['count'] < 5) {
+          array_push($errors, "Login fails");
+        } else {
+          if ($time_remain == 0) {
+            $login['count'] = 0;
+            array_push($errors, "Login fails");
+          } else {
+            array_push($errors, "Too many failed logins for this username. Please try again after " . $time_remain . "minutes");
+          }
+        }
+      }
+    }
+    return $errors;
+  }
+
+  // Start of my hashing function
+
+
+  // End of my hashing function
 ?>

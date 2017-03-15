@@ -93,31 +93,4 @@
     return htmlEntities($id, ENT_QUOTES);
   }
 
-  // Deal with login
-  function update_login($username, $success, $errors=array()) {
-    $sql_date = date("Y-m-d H:i:s");
-    $fl_result = find_login($username);
-    $login = db_fetch_assoc($fl_result);
-
-    if ($success) {
-      if ($login) {
-        remove_failed_login($username);
-      }
-    } else {
-      if (!$login) {
-        $login = [
-          'username' => $username,
-          'count' => 1,
-          'last_attempt' => $sql_date
-        ];
-        insert_failed_login($login);
-      } else {
-        $login['count'] = $login['count'] + 1;
-        $login['last_attempt'] = $sql_date;
-        update_failed_login($login);
-      }
-    }
-    return $errors;
-  }
-
 ?>

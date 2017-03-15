@@ -649,7 +649,7 @@
     global $db;
     $sql = "UPDATE login SET count=" . $login['count'] . ", last_attempt='" . $login['last_attempt'] . "' LIMIT 1;";
     $result = db_query($db, $sql);
-    if($result) {
+    if ($result) {
       return true;
     } else {
       // The SQL UPDATE statement failed.
@@ -658,7 +658,16 @@
       db_close($db);
       exit;
     }
+  }
 
+  function check_time_remain($login) {
+    global $db;
+    $sql = "SELECT * FROM login WHERE username='" . $login['username'] ."';";
+    $user_result = db_query($db, $sql);
+    $user = db_fetch_assoc($user_result);
+    $last_trial = strtotime($user['last_attempt']);
+    $now = strtotime(date("Y-m-d H:i:s"));
+    return ($last_trial - $now) / 60;
   }
 
 

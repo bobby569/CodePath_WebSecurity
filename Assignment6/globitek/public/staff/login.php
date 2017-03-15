@@ -31,7 +31,7 @@ if(is_post_request() && request_is_same_domain()) {
 
     $users_result = find_users_by_username($username);
     // No loop, only one result
-    $user = db_fetch_assoc($users_result);
+    $user = ($users_result);
     if($user) {
       if (password_verify($password, $user['hashed_password'])) {
         // Username found, password matches
