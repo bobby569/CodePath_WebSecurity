@@ -23,12 +23,15 @@ if(is_post_request() && request_is_same_domain()) {
   if(isset($_POST['password'])) { $user['password'] = validate_query($_POST['password']); }
   if(isset($_POST['password_confirm'])) { $user['password_confirm'] = validate_query($_POST['password_confirm']); }
 
-
-  $result = update_user($user);
-  if($result === true) {
-    redirect_to('show.php?id=' . $user['id']);
+  if (isset($user['password']) && isset($user['password_confirm'])) {
+    $result = update_user($user);
+    if($result === true) {
+      redirect_to('show.php?id=' . $user['id']);
+    } else {
+      $errors = $result;
+    }
   } else {
-    $errors = $result;
+    array_push($array, "Please enter password");
   }
 }
 ?>

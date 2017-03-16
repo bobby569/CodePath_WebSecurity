@@ -79,7 +79,7 @@
         if ($login['count'] < 5) {
           array_push($errors, "Login fails");
         } else {
-          if ($time_remain == 0) {
+          if ($time_remain <= 0) {
             $login['count'] = 0;
             array_push($errors, "Login fails");
           } else {
@@ -91,8 +91,4 @@
     return $errors;
   }
 
-  // Start of my hashing function
-
-
-  // End of my hashing function
 ?>

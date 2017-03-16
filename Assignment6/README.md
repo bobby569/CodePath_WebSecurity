@@ -1,6 +1,6 @@
 # Project 6 - Globitek Authentication and Login Throttling
 
-Time spent: **X** hours spent in total
+Time spent: **11** hours spent in total
 
 ## User Stories
 
@@ -35,7 +35,7 @@ The following **required** functionality is completed:
   * [x]  Set the failed_logins.count for the username to 0.
 
 7\. SQLi and XSS
-  * [ ]  Do not introduce any SQLI Injection and Cross-Site Scripting vulnerabilities.
+  * [x]  Do not introduce any SQLI Injection and Cross-Site Scripting vulnerabilities.
 
 The following advanced user stories are optional:
 
@@ -43,8 +43,8 @@ The following advanced user stories are optional:
   * [ ]  Identify the subtle Username Enumeration weakness. Include a short description of how the code could be modified to be more secure below:
 
 * Bonus Objective 2\.
-  * [ ]  User password validations only run when the password is not blank.
-  * [ ]  `update_user` only encrypts and updates the password when the password is not blank.
+  * [x]  User password validations only run when the password is not blank.
+  * [x]  `update_user` only encrypts and updates the password when the password is not blank.
 
 * Bonus Objective 3\.
   * [ ]  Create a new user using cost 10.

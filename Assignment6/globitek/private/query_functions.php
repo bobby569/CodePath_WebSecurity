@@ -667,9 +667,7 @@
     $user = db_fetch_assoc($user_result);
     $last_trial = strtotime($user['last_attempt']);
     $now = strtotime(date("Y-m-d H:i:s"));
-    return ($last_trial - $now) / 60;
+    return ceil(5 - ($last_trial - $now) / 60);
   }
-
-
 
 ?>
