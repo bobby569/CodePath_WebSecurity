@@ -90,5 +90,23 @@
     }
     return $errors;
   }
-
+/*
+  function throttle_time($username) {
+    $threshold = 5;
+    $lockout = 60 * $threshold; // in seconds
+    $fl_result = find_failed_login($username);
+    $failed_login = db_fetch_assoc($fl_result);
+    if(!isset($failed_login)) { return 0; }
+    if($failed_login['count'] < $threshold) { return 0; }
+    $last_attempt = strtotime($failed_login['last_attempt']);
+    $since_last_attempt = time() - $last_attempt;
+    $remaining_lockout = $lockout - $since_last_attempt;
+    if($remaining_lockout < 0) {
+      reset_failed_login($username);
+      return 0;
+    } else {
+      return $remaining_lockout;
+    }
+  }
+*/
 ?>
