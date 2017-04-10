@@ -483,7 +483,7 @@
   function find_users_by_username($username='') {
     global $db;
     $sql = "SELECT * FROM users ";
-    $sql .= "WHERE username = '" . db_escape($db, $username) . "';";
+    $sql .= "WHERE username='" . db_escape($db, $username) . "';";
     $users_result = db_query($db, $sql);
     return $users_result;
   }
@@ -610,14 +610,14 @@
   // Get login information
   function find_login($username) {
     global $db;
-    $sql = "SELECT FROM login WHERE username='" . $username . "';";
+    $sql = "SELECT * FROM login WHERE username='" . db_escape($db, $username) . "';";
     $result = db_query($db, $sql);
     return $result;
   }
 
   function remove_failed_login($username) {
     global $db;
-    $sql = "DELETE FROM login WHERE username='" . $username . "' LIMIT 1";
+    $sql = "DELETE FROM login WHERE username='" . db_escape($db, $username) . "' LIMIT 1";
     $result = db_query($db, $sql);
     if ($result) {
       return true;
