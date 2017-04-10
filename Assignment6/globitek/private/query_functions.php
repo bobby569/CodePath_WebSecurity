@@ -517,7 +517,7 @@
       $errors[] = "Username not allowed. Try another.";
     }
     $errors = validate_password($user['password'], $user['password_confirm'], $errors);
-    $errors = validate_input($user, $errors);
+    $errors = validate_input($user, $errors); // Check possible SQL Injection
     return $errors;
   }
 

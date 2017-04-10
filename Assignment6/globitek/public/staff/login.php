@@ -26,36 +26,36 @@ if(is_post_request() && request_is_same_domain()) {
   if (is_blank($username)) {
     $errors[] = "Username cannot be blank.";
   } else {
+    // Check SQL Injection
     $errors = validate_input($username, $errors);
   }
   if (is_blank($password)) {
     $errors[] = "Password cannot be blank.";
   } else {
+    // Check SQL Injection
     $errors = validate_input($password, $errors);
   }
 
   // If there were no errors, submit data to database
   if (empty($errors)) {
-
     $users_result = find_users_by_username($username);
     // No loop, only one result
     $user = db_fetch_assoc($users_result);
     if ($user) {
-      if (!strcmp($password, "secret") || password_verify($password, $user['hashed_password'])) {
+      if (password_verify($password, $user['hashed_password'])) {
         // Username found, password matches
         log_in_user($user);
         // Update failed login record
 
         //TODO: Database query failed.
-        //update_login($username, true);
-
-
+//        update_login($username, true);
 
         // Redirect to the staff menu after login
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
         $errors = update_login($username, false, $errors);
+        array_push($errors, "Login fails");
       }
     } else {
       // No username found

@@ -59,9 +59,6 @@ if(is_post_request() && request_is_same_domain()) {
     <input type="password" name="password" value="" /><br />
     Confirm Password:<br />
     <input type="password" name="password_confirm" value="" /><br />
-    <p>
-      Passwords should be at least 12 characters and include at least one uppercase letter, lowercase letter, number, and symbol.
-    </p>
     <br />
     <input type="submit" name="submit" value="Update"  />
   </form>
