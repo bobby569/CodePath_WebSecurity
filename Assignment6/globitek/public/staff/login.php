@@ -35,7 +35,7 @@ if(is_post_request() && request_is_same_domain()) {
     // Check SQL Injection
     $errors = validate_input($password, $errors);
   }
-
+    // TODO: Data query failure
   // If there were no errors, submit data to database
   if (empty($errors)) {
     $users_result = find_users_by_username($username);
@@ -46,16 +46,13 @@ if(is_post_request() && request_is_same_domain()) {
         // Username found, password matches
         log_in_user($user);
         // Update failed login record
-
-        //TODO: Database query failed.
-//        update_login($username, true);
-
+        update_login($username, true);
         // Redirect to the staff menu after login
         redirect_to('index.php');
       } else {
         // Username found, but password does not match.
-        $errors = update_login($username, false, $errors);
         array_push($errors, "Login fails");
+        $errors = update_login($username, false, $errors);
       }
     } else {
       // No username found

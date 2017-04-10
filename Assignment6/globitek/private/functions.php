@@ -51,62 +51,68 @@
     return $output;
   }
 
+  function record_failed_login($username) {
+    // The failure technically already happened, so
+    // get the time ASAP.
+    $sql_date = date("Y-m-d H:i:s");
+
+    $fl_result = find_failed_login($username);
+    $failed_login = db_fetch_assoc($fl_result);
+
+    if(!$failed_login) {
+      $failed_login = [
+        'username' => $username,
+        'count' => 1,
+        'last_attempt' => $sql_date
+      ];
+      insert_failed_login($failed_login);
+    } else {
+      $failed_login['count'] = $failed_login['count'] + 1;
+      $failed_login['last_attempt'] = $sql_date;
+      update_failed_login($failed_login);
+    }
+    return true;
+  }
+
   // Deal with login
   function update_login($username, $success, $errors=array()) {
     $sql_date = date("Y-m-d H:i:s");
     $fl_result = find_login($username);
+    // No loop is needed
     $login = db_fetch_assoc($fl_result);
 
     if ($success) {
-      if ($login) {
+      if (isset($login)) {
         remove_failed_login($username);
       }
       return $errors;
     } else {
-      if (!$login) {
+      if (!isset($login)) {
         $login = [
           'username' => $username,
           'count' => 1,
           'last_attempt' => $sql_date
         ];
         insert_failed_login($login);
-        array_push($errors, "Login fails");
       } else {
-        $login['count'] = $login['count'] + 1;
-        $login['last_attempt'] = $sql_date;
-        update_failed_login($login);
-        $time_remain = check_time_remain($login);
+        $login['count'] = intval($login['count']) + 1;
         if ($login['count'] < 5) {
-          array_push($errors, "Login fails");
+          $login['last_attempt'] = $sql_date;
+          update_failed_login($login);
         } else {
-          if ($time_remain <= 0) {
+          $time_remaining = get_time_remain($login['username']);
+          if ($time_remaining < 0) {
             $login['count'] = 0;
-            array_push($errors, "Login fails");
+            $login['last_attempt'] = $sql_date;
+            update_failed_login($login);
           } else {
-            array_push($errors, "Too many failed logins for this username. Please try again after " . $time_remain . "minutes");
+            $time_in_minute = ceil($time_remaining / 60);
+            array_push($errors, "Too many failed logins. Try again after " . $time_in_minute . " minute(s)");
           }
         }
       }
     }
     return $errors;
   }
-/*
-  function throttle_time($username) {
-    $threshold = 5;
-    $lockout = 60 * $threshold; // in seconds
-    $fl_result = find_failed_login($username);
-    $failed_login = db_fetch_assoc($fl_result);
-    if(!isset($failed_login)) { return 0; }
-    if($failed_login['count'] < $threshold) { return 0; }
-    $last_attempt = strtotime($failed_login['last_attempt']);
-    $since_last_attempt = time() - $last_attempt;
-    $remaining_lockout = $lockout - $since_last_attempt;
-    if($remaining_lockout < 0) {
-      reset_failed_login($username);
-      return 0;
-    } else {
-      return $remaining_lockout;
-    }
-  }
-*/
+
 ?>

@@ -610,7 +610,7 @@
   // Get login information
   function find_login($username) {
     global $db;
-    $sql = "SELECT FROM login WHERE username='". $username . "';";
+    $sql = "SELECT FROM login WHERE username='" . $username . "';";
     $result = db_query($db, $sql);
     return $result;
   }
@@ -619,7 +619,7 @@
     global $db;
     $sql = "DELETE FROM login WHERE username='" . $username . "' LIMIT 1";
     $result = db_query($db, $sql);
-    if($result) {
+    if ($result) {
       return true;
     } else {
       // The SQL DELETE statement failed.
@@ -632,7 +632,12 @@
 
   function insert_failed_login($login) {
     global $db;
-    $sql = "INSERT INTO login VALUES ('" . $login['username'] . "', " . $login['count'] . ", '" . $login['last_attempt'] ."')";
+    $sql = "INSERT INTO login VALUES ";
+    $sql .= "(";
+    $sql .= "'" . db_escape($db, $login['username']) . "',";
+    $sql .= "'" . db_escape($db, $login['count']). "',";
+    $sql .= "'" . db_escape($db, $login['last_attempt']) . "'";
+    $sql .= ");";
     $result = db_query($db, $sql);
     if($result) {
       return true;
@@ -647,7 +652,11 @@
 
   function update_failed_login($login) {
     global $db;
-    $sql = "UPDATE login SET count=" . $login['count'] . ", last_attempt='" . $login['last_attempt'] . "' LIMIT 1;";
+    $sql = "UPDATE login SET ";
+    $sql .= "count='" . db_escape($db, $login['count']) . "',";
+    $sql .= "last_attempt='" . db_escape($db, $login['last_attempt']) . "' ";
+    $sql .= "WHERE username='" . db_escape($db, $login['username']). "' ";
+    $sql .= "LIMIT 1;";
     $result = db_query($db, $sql);
     if ($result) {
       return true;
@@ -660,14 +669,15 @@
     }
   }
 
-  function check_time_remain($login) {
+  function get_time_remain($username) {
     global $db;
-    $sql = "SELECT * FROM login WHERE username='" . $login['username'] ."';";
-    $user_result = db_query($db, $sql);
-    $user = db_fetch_assoc($user_result);
-    $last_trial = strtotime($user['last_attempt']);
-    $now = strtotime(date("Y-m-d H:i:s"));
-    return ceil(5 - ($last_trial - $now) / 60);
+    $lockout = 300; // in second
+    $sql = "SELECT * FROM login WHERE username='" . db_escape($db, $username) . "';";
+    $login_result = db_query($db, $sql);
+    $login = db_fetch_assoc($login_result);
+
+    $last_attempt = strtotime($login['last_attempt']);
+    return $lockout - (time() - $last_attempt);
   }
 
 ?>
